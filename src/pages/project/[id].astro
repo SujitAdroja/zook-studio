@@ -1,0 +1,17 @@
+---
+import SinglePage from "../../components/SinglePage.astro";
+import Layout from "../../layouts/Layout.astro";
+export function getStaticPaths() {
+  return [
+    { params: { id: decodeURI("1") } },
+    { params: { id: decodeURI("2") } },
+    { params: { id: decodeURI("3") } },
+  ];
+}
+const { id } = Astro.params;
+console.log(id);
+---
+
+<Layout>
+  <SinglePage id={id} />
+</Layout>

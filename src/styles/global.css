@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Epunda+Slab:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background: black;
+  margin: 0 !important;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@layer components {
+  .noisy {
+    @apply absolute inset-0 size-full bg-[url("/homepage/noise.png")];
+  }
+}

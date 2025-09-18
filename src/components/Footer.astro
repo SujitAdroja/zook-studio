@@ -1,0 +1,71 @@
+<footer class="footer bg-black text-white py-20 mb-20">
+  <div class="px-10">
+    <div class="text-center">
+      <div class="text-center">
+        <h2 class="h2-footer text-2xl font-bold">Our Vision</h2>
+        <p class="para-footer mt-2 text-sm w-[40%] mx-auto">
+          Zook studio is more than just a bussiness, it's a testament to our
+          shared desire and commitment to transforming space into captive
+          stories.
+        </p>
+        <h1 class="logo-footer uppercase text-[200px] font-bold">
+          zook studio
+        </h1>
+      </div>
+      <div class="flex items-center justify-center">
+        <ul class="nav-footer flex items-center gap-8 text-gray-400">
+          <li><a href="#" class="hover:underline">Home</a></li>
+          <li><a href="#" class="hover:underline">About</a></li>
+          <li><a href="#" class="hover:underline">Services</a></li>
+          <li><a href="#" class="hover:underline">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger, SplitText } from "gsap/all";
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+  const scrollTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".footer",
+      start: "top center",
+    },
+  });
+  const paraSplit = SplitText.create(".para-footer", { type: "lines,chars" });
+  const logoSplit = SplitText.create(".logo-footer", { type: "lines , chars" });
+  const h2Split = SplitText.create(".h2-footer", { type: "lines , chars" });
+  const navFooterSplit = SplitText.create(".nav-footer li", { type: "lines" });
+  scrollTimeline.from(h2Split.chars, {
+    opacity: 0,
+    duration: 1,
+    yPercent: 100,
+    ease: "expo.out",
+    stagger: 0.02,
+  });
+
+  scrollTimeline.from(paraSplit.lines, {
+    opacity: 0,
+    duration: 1,
+    yPercent: 100,
+    ease: "expo.out",
+    stagger: 0.02,
+  });
+
+  scrollTimeline.from(logoSplit.chars, {
+    opacity: 0,
+    duration: 1,
+    yPercent: 100,
+    ease: "expo.out",
+    stagger: 0.02,
+  });
+  scrollTimeline.from(navFooterSplit.lines, {
+    opacity: 0,
+    duration: 1,
+    yPercent: 100,
+    ease: "expo.out",
+    stagger: 0.2,
+  });
+</script>

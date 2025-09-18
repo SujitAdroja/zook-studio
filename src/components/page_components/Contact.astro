@@ -1,0 +1,155 @@
+---
+import { MdOutlineLocalPhone } from "react-icons/md";
+import { CiMail } from "react-icons/ci";
+import { CiLocationOn } from "react-icons/ci";
+---
+
+<section class="about">
+  <div class="grid grid-cols-2">
+    <div class="p-10">
+      <h1 class="contact-heading text-white text-6xl font-light">
+        Let's talk more <br /> about your next project.
+      </h1>
+      <div class="contact-info mt-50 flex flex-col items-start">
+        <div
+          class="flex items-center text-white bg-white/20 rounded-md mb-2 hover:bg-white/10 transition-all duration-300 ease-in-out cursor-pointer"
+        >
+          <div class="bg-white/20 p-1">
+            <MdOutlineLocalPhone size={30} />
+          </div>
+          <p class="px-4">+91 999988 83169</p>
+        </div><div
+          class="flex items-center text-white bg-white/20 rounded-md mb-2 hover:bg-white/10 transition-all duration-300 ease-in-out cursor-pointer"
+        >
+          <div class="bg-white/20 p-1">
+            <CiMail size={30} />
+          </div>
+          <p class="px-4">info.zookstudio@gmail.com</p>
+        </div><div
+          class="flex items-center text-white bg-white/20 rounded-md mb-2 hover:bg-white/10 transition-all duration-300 ease-in-out cursor-pointer"
+        >
+          <div class="bg-white/20 p-1">
+            <CiLocationOn size={30} />
+          </div>
+          <p class="px-4">
+            A 401 - 402, Hari villa, Near kairavi bungalows, Bodakdev, Ahemdabad
+            - 380054
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="relative">
+      <div
+        class="absolute w-full inset-0 bg-gradient-to-t from-black via-transparent to-black/40"
+      >
+      </div><img
+        src="/homepage/contact-image.jpg"
+        alt="furniture image"
+        class="contact-image w-full"
+      />
+    </div>
+  </div>
+</section>
+
+<div class="questions-section my-60 px-6">
+  <p
+    class="question-title text-white text-lg text-right font-semibold leading-12 mb-10 border-b border-white/20"
+  >
+    Frequently Asked Questions
+  </p>
+  <div class="text-white mb-10">
+    <p class="text-5xl font-light w-1/2">
+      What interior design style would you like to explore for your project?
+    </p>
+    <input
+      type="text"
+      class="mt-4 px-2 py-6 w-1/2 bg-black/20 border border-white/20 rounded-md text-white font-light"
+      placeholder="Write down your style..."
+    />
+  </div>
+  <div class="text-white mb-10">
+    <p class="text-5xl font-light w-1/2">
+      What is the timeline for your interior design project?
+    </p>
+    <input
+      type="text"
+      class="mt-4 px-2 py-6 w-1/2 bg-black/20 border border-white/20 rounded-md text-white font-light"
+      placeholder="Write down your style..."
+    />
+  </div>
+  <div class="text-white">
+    <p class="text-5xl font-light w-1/2">
+      What is estimated budget for your interior design project?
+    </p>
+    <input
+      type="text"
+      class="mt-4 px-2 py-6 w-1/2 bg-black/20 border border-white/20 rounded-md text-white font-light"
+      placeholder="Write down your style..."
+    />
+  </div>
+</div>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger, SplitText } from "gsap/all";
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+
+  const titleSplit = SplitText.create(".contact-heading", {
+    type: "words,chars,lines",
+  });
+  const contactInfoSplit = SplitText.create(".contact-info", {
+    type: "lines",
+  });
+  gsap.from(titleSplit.lines, {
+    opacity: 0,
+    duration: 1,
+    xPercent: -100,
+    ease: "expo.out",
+    stagger: 0.2,
+  });
+
+  gsap.from(contactInfoSplit.lines, {
+    opacity: 0,
+    duration: 1,
+    delay: 0.5,
+    xPercent: -100,
+    ease: "expo.out",
+    stagger: 0.2,
+  });
+
+  gsap.from(".contact-image", {
+    opacity: 0,
+    duration: 1,
+    delay: 0.3,
+    xPercent: 100,
+    ease: "expo.out",
+    stagger: 0.2,
+  });
+
+  const scrollTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".questions-section",
+      start: "top 70%",
+    },
+  });
+
+  scrollTimeline.from(".question-title", {
+    opacity: 0,
+    duration: 1.5,
+    yPercent: 300,
+    ease: "expo.out",
+    stagger: 0.01,
+  });
+
+  const sectionSPlit = SplitText.create(".questions-section div", {
+    type: "lines",
+  });
+
+  scrollTimeline.from(sectionSPlit.lines, {
+    opacity: 0,
+    duration: 1.5,
+    yPercent: 300,
+    ease: "expo.out",
+    stagger: 0.09,
+  });
+</script>

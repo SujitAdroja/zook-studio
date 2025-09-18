@@ -1,0 +1,423 @@
+---
+import { projects } from "../../constants";
+---
+
+<section>
+  <!-- <div
+  class={`relative h-screen  bg-[linear-gradient(to_top,rgba(0,0,0,1),transparent),url('/homepage/hero-image.jpg')] bg-cover bg-center`}
+  > -->
+  <div class={`relative h-screen overflow-hidden`}>
+    <video
+      autoplay
+      loop
+      muted
+      playsinline
+      class="absolute inset-0 w-full h-full object-cover"
+    >
+      <source src="/videos/home_screen_video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40"
+    >
+    </div>
+    <div class="absolute bottom-0 p-6 w-full flex items-center justify-between">
+      <div class="shrink-0">
+        <p class="title-tag text-white tracking-[0.4em] ml-1">ZOOK STUDIO</p>
+        <h1 class="hero-heading w-full text-white text-7xl font-light">
+          Bringing the home of <br /> your dream to reality.
+        </h1>
+      </div>
+
+      <!-- <div class="flex items-center gap-4">
+        <img src="/homepage/image-1.jpg" alt="" class="w-1/4" />
+        <img src="/homepage/image-2.jpg" alt="" class="w-1/4" />
+        <img src="/homepage/image-3.jpg" alt="" class="w-1/4" />
+      </div> -->
+    </div>
+  </div>
+  <!-- section 2 -->
+  <div
+    class="content relative text-center h-screen flex flex-col items-center justify-center px-6"
+  >
+    <div
+      class="content-white-bg absolute bg-white h-full w-full top-0 left-0 translate-y-400"
+    >
+    </div>
+    <p
+      class="para max-w-4xl mx-auto text-white text-4xl font-semibold leading-12 mix-blend-difference"
+    >
+      With unlimited creativity, <em class="font-thin"
+        >we transform your vision into reality, inviting you to</em
+      > discover a universe of unique and memorable <em class="font-thin"
+        >experiences</em
+      >.
+    </p>
+    <p
+      class="para max-w-xl mx-auto text-white text-md font-light mt-10 w-[60%] mx-auto mix-blend-difference"
+    >
+      Every detail is designed to capture the essence of your style and turn the
+      space into a reflection of your own identity.
+    </p>
+  </div>
+
+  <!-- section -3 detailsmatters sections -->
+  <section class="details">
+    <div class="min-h-screen py-28 px-6 container mx-auto">
+      <div class="mb-16 md:px-0 px-5">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+          <div class="md:col-span-8">
+            <h2
+              class="details-header text-5xl md:text-6xl font-modern-negra max-w-lg text-white"
+            >
+              Where every details matters <span class="text-white">-</span>{" "}
+              From design to reality
+            </h2>
+          </div>
+          <div
+            class="sub-content md:col-span-4 space-y-5 flex flex-col justify-between;"
+          >
+            <p class="text-lg">
+              Every cocktail we serve is a reflection of our obsession with
+              detail — from the first muddle to the final garnish. That care is
+              what turns a simple drink into something truly memorable.{" "}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="top-grid grid grid-cols-1 xl:grid-cols-12 gap-5 mb-5 md:px-0 px-5"
+      >
+        <div class="rounded-3xl overflow-hidden h-50 relative md:col-span-3">
+          <div class="noisy"></div>
+          <img
+            src="/homepage/hero_image.jpg"
+            alt="grid-img-1"
+            class="object-cover w-full h-full"
+          />
+        </div>
+
+        <div class="rounded-3xl overflow-hidden h-50 relative md:col-span-6">
+          <div class="noisy"></div>
+          <img
+            src="/homepage/hero-image.jpg"
+            alt="grid-img-2"
+            class="object-cover w-full h-full"
+          />
+        </div>
+
+        <div class="rounded-3xl overflow-hidden h-50 relative md:col-span-3">
+          <div class="noisy"></div>
+          <img
+            src="/homepage/image-1.jpg"
+            alt="grid-img-5"
+            class="object-cover w-full h-full"
+          />
+        </div>
+      </div>
+      <div
+        class="bottom-grid grid grid-cols-1 md:grid-cols-12 gap-5 md:px-0 px-5"
+      >
+        <div class="rounded-3xl overflow-hidden h-50 relative md:col-span-8">
+          <div class="noisy"></div>
+          <img
+            src="/homepage/image-2.jpg"
+            alt="grid-img-3"
+            class="object-cover w-full h-full"
+          />
+        </div>
+        <div class="rounded-3xl overflow-hidden h-50 relative md:col-span-4">
+          <div class="noisy"></div>
+          <img
+            src="/homepage/image-3.jpg"
+            alt="grid-img-4"
+            class="object-cover w-full h-full"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- project sections -->
+
+  <section
+    id="project-section"
+    class="min-h-screen py-28 px-6 container mx-auto text-white"
+  >
+    <h2
+      class="projects-heading text-5xl md:text-7xl text-white uppercase font-bold mb-10"
+    >
+      Our Projects
+    </h2>
+    <div class="projects grid grid-cols-12 items-start">
+      <div class="col-span-6"></div>
+      <div class="col-span-3 ml-2 border-b border-white/40">
+        <p class="text-white/40">Prize</p>
+      </div>
+      <div class="col-span-3 border-b border-white/40">
+        <p class="text-white/40">Project</p>
+      </div>
+    </div>
+    <!-- <div class="projects project-1 grid grid-cols-12 gap-x-4 items-start mb-10">
+      <div
+        class="col-span-2 flex items-center justify-between p-2 px-4 bg-white/20 text-white rounded-md"
+      >
+        <p>01</p>
+        <p>2024</p>
+      </div>
+      <div class="col-span-4">
+        <img
+          src="/homepage/hero-image.jpg"
+          alt="project-1"
+          class="rounded-lg border-5 border-white/20 h-70 w-full cover"
+        />
+      </div>
+      <div class="col-span-3 py-4">
+        <h3 class="text-4xl tracking-[-3px] mb-20">
+          Best Residential Interior Apartment Ahembdabad
+        </h3>
+        <a
+          href=""
+          class="inline-block relative uppercase mt-auto p-2 border border-white/20 overflow-hidden
+         before:content-[''] before:absolute before:top-0 before:left-0 before:h-full before:w-0
+         before:bg-white/20 before:transition-all before:duration-300 before:ease-in-out
+         hover:before:w-full"
+          >Discover The Project &rarr;</a
+        >
+      </div>
+      <div class="col-span-3 py-4 font-[200]">
+        <p class="mb-20">Serenity Lake Apartment</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus voluptatum fugiat eos perferendis neque dolore.
+        </p>
+      </div>
+    </div>
+    <div class="projects project-2 grid grid-cols-12 gap-x-4 items-start mb-10">
+      <div
+        class="col-span-2 flex items-center justify-between p-2 px-4 bg-white/20 text-white rounded-md"
+      >
+        <p>02</p>
+        <p>2025</p>
+      </div>
+      <div class="col-span-4">
+        <img
+          src="/homepage/hero_image.jpg"
+          alt="project-1"
+          class="rounded-lg border-5 border-white/20 h-70 w-full cover"
+        />
+      </div>
+      <div class="col-span-3 py-4">
+        <h3 class="text-4xl tracking-[-3px] mb-20">
+          Best Residential Interior Apartment Romania
+        </h3>
+        <a
+          href=""
+          class="inline-block relative uppercase mt-auto p-2 border border-white/20 overflow-hidden
+         before:content-[''] before:absolute before:top-0 before:left-0 before:h-full before:w-0
+         before:bg-white/20 before:transition-all before:duration-300 before:ease-in-out
+         hover:before:w-full"
+          >Discover The Project &rarr;</a
+        >
+      </div>
+      <div class="col-span-3 py-4 font-[200]">
+        <p class="mb-20">Serenity Lake Apartment</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus voluptatum fugiat eos perferendis neque dolore.
+        </p>
+      </div>
+    </div>
+    <div class="projects project-3 grid grid-cols-12 gap-x-4 items-start">
+      <div
+        class="col-span-2 flex items-center justify-between p-2 px-4 bg-white/20 text-white rounded-md"
+      >
+        <p>03</p>
+        <p>2025</p>
+      </div>
+      <div class="col-span-4">
+        <img
+          src="/homepage/image-5.jpg"
+          alt="project-1"
+          class="rounded-lg border-5 border-white/20 h-70 w-full cover"
+        />
+      </div>
+      <div class="col-span-3 py-4">
+        <h3 class="text-4xl tracking-[-3px] mb-20">
+          Best Residential Interior Apartment Europe
+        </h3>
+        <a
+          href=""
+          class="inline-block relative uppercase mt-auto p-2 border border-white/20 overflow-hidden
+         before:content-[''] before:absolute before:top-0 before:left-0 before:h-full before:w-0
+         before:bg-white/20 before:transition-all before:duration-300 before:ease-in-out
+         hover:before:w-full"
+          >Discover The Project &rarr;</a
+        >
+      </div>
+      <div class="col-span-3 py-4 font-[200]">
+        <p class="mb-20">Serenity Lake Apartment</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Necessitatibus voluptatum fugiat eos perferendis neque dolore.
+        </p>
+      </div>
+    </div> -->
+
+    <div>
+      {
+        projects.map((project, index) => (
+          <div
+            class={`projects project-${index + 1} grid grid-cols-12 gap-x-4 items-start mb-10`}
+          >
+            <div class="col-span-2 flex items-center justify-between p-2 px-4 bg-white/20 text-white rounded-md">
+              <p>0{index + 1}</p>
+              <p>{project.year}</p>
+            </div>
+            <div class="col-span-4">
+              <img
+                src={project.image}
+                alt="project-1"
+                class="rounded-lg border-5 border-white/20 h-70 w-full cover"
+              />
+            </div>
+            <div class="col-span-3 py-4">
+              <h3 class="text-4xl tracking-[-3px] mb-20">{project.title}</h3>
+              <a
+                href={`/project/${index + 1}`}
+                class="inline-block relative uppercase mt-auto p-2 border border-white/20 overflow-hidden
+         before:content-[''] before:absolute before:top-0 before:left-0 before:h-full before:w-0
+         before:bg-white/20 before:transition-all before:duration-300 before:ease-in-out
+         hover:before:w-full"
+              >
+                Discover The Project &rarr;
+              </a>
+            </div>
+            <div class="col-span-3 py-4 font-[200]">
+              <p class="mb-20">{project.projectTitle}</p>
+              <p>{project.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger, SplitText } from "gsap/all";
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+
+  const titleSplit = SplitText.create(".hero-heading", { type: "words,chars" });
+  const titelTagSplit = SplitText.create(".title-tag", { type: "chars" });
+  gsap.from(titelTagSplit.chars, {
+    opacity: 0,
+    duration: 1,
+    yPercent: 100,
+    ease: "expo.out",
+    stagger: 0.02,
+  });
+  gsap.from(titleSplit.chars, {
+    opacity: 0,
+    duration: 1,
+    delay: 0.5,
+    yPercent: 100,
+    ease: "expo.out",
+    stagger: 0.01,
+  });
+
+  const scrollTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".content",
+      start: "top center",
+    },
+  });
+
+  const paraSplit = SplitText.create(".para", { type: "lines,chars" });
+
+  scrollTimeline.from(paraSplit.lines, {
+    opacity: 0,
+    duration: 1.5,
+    yPercent: 300,
+    ease: "expo.out",
+    stagger: 0.01,
+  });
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".content",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1,
+        pin: true,
+      },
+    })
+    .to(".content-white-bg", { y: 0, opacity: 1 });
+
+  // details scroll animation
+
+  const detailsScrollTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".details",
+      start: "top center",
+    },
+  });
+
+  const detailsHeaderSplit = SplitText.create(".details-header", {
+    type: "lines,chars",
+  });
+
+  detailsScrollTimeline.from(detailsHeaderSplit.chars, {
+    opacity: 0,
+    duration: 1,
+    yPercent: 80,
+    ease: "expo.out",
+    stagger: 0.02,
+  });
+
+  detailsScrollTimeline.from(".top-grid , .bottom-grid", {
+    opacity: 0,
+    duration: 1,
+    yPercent: 100,
+    ease: "expo.out",
+    stagger: 0.09,
+  });
+
+  //projects
+  const projectsTitleSplit = SplitText.create(".projects-heading", {
+    type: "words,chars",
+  });
+  const projectsScrollTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#project-section",
+      start: "top center",
+    },
+  });
+  projectsScrollTimeline.from(projectsTitleSplit.chars, {
+    opacity: 0,
+    duration: 1,
+    yPercent: 100,
+    ease: "expo.out",
+    stagger: 0.01,
+  });
+  projectsScrollTimeline.from(".project-1 ", {
+    opacity: 0,
+    duration: 1,
+    yPercent: 100,
+    ease: "expo.out",
+  });
+  projectsScrollTimeline.from(" .project-2 ", {
+    opacity: 0,
+    duration: 1,
+    yPercent: 100,
+    ease: "expo.out",
+  });
+  projectsScrollTimeline.from(" .project-3", {
+    opacity: 0,
+    duration: 1,
+    yPercent: 100,
+    ease: "expo.out",
+  });
+</script>

@@ -1,0 +1,160 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+export function getStaticPaths() {
+  return [
+    { params: { id: decodeURI("commercial") } },
+    { params: { id: decodeURI("residential") } },
+    { params: { id: decodeURI("airbnb") } },
+  ];
+}
+const { id } = Astro.params;
+---
+
+<Layout
+  ><div
+    class={`hero-image-container relative text-white h-screen  bg-[linear-gradient(to_top,rgba(0,0,0,1),transparent),url('/images/living7.jpg')] bg-cover bg-no-repeat bg-center`}
+  >
+    <div class="absolute bottom-0 p-6 w-full">
+      <div>
+        <p
+          class="title-tag text-white tracking-[0.4em] ml-1 text-xl font-[200]"
+        >
+          ZOOK STUDIO
+        </p>
+        <h1 class="hero-heading text-white text-7xl font-light mb-4">
+          ZOOK Projects
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="py-28 text-white">
+    <div class="flex items-start justify-between px-6">
+      <h2 class="text-4xl font-semibold max-w-xl">
+        Discover our projects and see the story of each one.
+      </h2>
+      <p
+        class="text-sm uppercase px-4 py-2 border border-white/40 rounded-full"
+      >
+        ZOOK <span class="font-[200]">{id}</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="py-28 text-white px-6">
+    <div class="mb-20">
+      <div
+        class="flex items-end justify-between px-4 mb-20 h-150 bg-[linear-gradient(to_top,rgba(0,0,0,1),transparent),url('/images/living6.jpg')] bg-cover bg-center"
+      >
+        <div>
+          <p class="text-white/50 text-lg">Project Year - 2025</p>
+          <h2 class="text-6xl font-medium">Epique Home</h2>
+        </div>
+        <div class="flex item-center gap-20">
+          <p class="z-1 font-medium">
+            LOCATION - <span class="text-white/70 font-[200]">Bruchet</span>
+          </p>
+          <p class="z-1 font-medium">
+            SURFACE - <span class="text-white/70 font-[200]">350m2</span>
+          </p>
+          <p class="z-1 font-medium">
+            TYPE - <span class="text-white/70 font-[200]">Commercial</span>
+          </p>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-x-10">
+        <div class="relative">
+          <a href="/project/1">
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black to-transparent"
+            >
+            </div>
+
+            <img
+              src="/images/living1.jpg"
+              alt="living images"
+              class="h-150 w-full"
+            />
+            <div class="absolute left-[50%] -translate-x-[50%] bottom-0">
+              <p class="text-white/50 text-lg text-center">
+                Project Year - 2025
+              </p>
+              <h2 class="text-6xl font-light">Epique Home</h2>
+            </div>
+          </a>
+        </div>
+        <div class="relative">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black to-transparent"
+          >
+          </div>
+          <img
+            src="/images/living2.jpg"
+            alt="living images"
+            class="h-150 w-full"
+          />
+          <div class="absolute left-[50%] -translate-x-[50%] bottom-0">
+            <p class="text-white/50 text-lg text-center">Project Year - 2025</p>
+            <h2 class="text-6xl font-light">Epique Home</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mb-20">
+      <div
+        class="flex items-end justify-between px-4 mb-20 h-150 bg-[linear-gradient(to_top,rgba(0,0,0,1),transparent),url('/images/living4.jpg')] bg-cover bg-center"
+      >
+        <div>
+          <p class="text-white/50 text-lg">Project Year - 2025</p>
+          <h2 class="text-6xl font-medium">Epique Home</h2>
+        </div>
+        <div class="flex item-center gap-20">
+          <p class="z-1 font-medium">
+            LOCATION - <span class="text-white/70 font-[200]">Bruchet</span>
+          </p>
+          <p class="z-1 font-medium">
+            SURFACE - <span class="text-white/70 font-[200]">350m2</span>
+          </p>
+          <p class="z-1 font-medium">
+            TYPE - <span class="text-white/70 font-[200]">Commercial</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-x-10">
+        <div class="relative">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black to-transparent"
+          >
+          </div>
+
+          <img
+            src="/images/living3.jpg"
+            alt="living images"
+            class="h-150 w-full"
+          />
+          <div class="absolute left-[50%] -translate-x-[50%] bottom-0">
+            <p class="text-white/50 text-lg text-center">Project Year - 2025</p>
+            <h2 class="text-6xl font-light">Epique Home</h2>
+          </div>
+        </div>
+        <div class="relative">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black to-transparent"
+          >
+          </div>
+          <img
+            src="/images/living5.jpg"
+            alt="living images"
+            class="h-150 w-full"
+          />
+          <div class="absolute left-[50%] -translate-x-[50%] bottom-0">
+            <p class="text-white/50 text-lg text-center">Project Year - 2025</p>
+            <h2 class="text-6xl font-light">Epique Home</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

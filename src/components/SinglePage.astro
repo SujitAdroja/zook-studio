@@ -1,0 +1,550 @@
+---
+// export function getStaticPaths() {
+//   return [
+//     { props: { id: decodeURI("1") } },
+//     { props: { id: decodeURI("2") } },
+//     { props: { id: decodeURI("3") } },
+//   ];
+// }
+// const { id } = Astro.props;
+---
+
+<section class="text-white overflow-hidden">
+  <div
+    class={`hero-image-container relative h-screen  bg-[linear-gradient(to_top,rgba(0,0,0,1),transparent),url('/homepage/hero-image.jpg')] bg-cover bg-center`}
+  >
+    <div class="absolute bottom-0 p-6 w-full flex items-center justify-center">
+      <div>
+        <p
+          class="title-tag text-white tracking-[0.4em] ml-1 text-center text-xl font-[200]"
+        >
+          ZOOK STUDIO
+        </p>
+        <h1
+          class="hero-heading text-white text-8xl font-bold text-center mb-4 uppercase"
+        >
+          Master Glory Apartment
+        </h1>
+        <p
+          class="hero-description max-w-2xl mx-auto text-white text-xl font-[200] text-center -tracking-[1px]"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam velit,
+          sunt earum voluptas eius error obcaecati, illum, facilis est aperiam
+          corporis voluptatem. Velit molestiae quidem libero voluptates
+          distinctio quod tempore.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- infomation of project  images-->
+  <div class="project-details grid grid-cols-8 py-28">
+    <div class="p-6 h-full flex flex-col justify-between col-span-3">
+      <div>
+        <h3
+          class="project-details-title text-5xl font-bold tracking-[-2px] mb-10"
+        >
+          Spaces designed to stimulate relaxation and promote well-being
+        </h3>
+        <p class="project-details-description font-[200]">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae
+          ad similique expedita eos laudantium provident eligendi repellat,
+          magnam amet quaerat iste aliquid quam at odio veritatis voluptatum
+          modi vitae. Tempora!
+        </p>
+      </div>
+      <div class="flex items-center gap-10">
+        <p class="project-details-timeline text-md">
+          LOCATION - <span class="text-white/50 font-[200]">Bruchet</span>
+        </p>
+        <p class="project-details-timeline text-md">
+          SURFACE - <span class="text-white/50 font-[200]">350m2</span>
+        </p>
+        <p class="project-details-timeline text-md">
+          YEAR - <span class="text-white/50 font-[200]">2025</span>
+        </p>
+      </div>
+    </div>
+    <div class="project-details-images p-4 px-6 pr-0 bg-white/10 col-span-5">
+      <h3 class="font-bold mb-4 text-2xl text-right pr-6">
+        Project Hightlights
+      </h3>
+      <img
+        src="/homepage/image-5.jpg"
+        alt="carousel image"
+        class="w-full h-120 mb-4"
+      />
+      <p class="text-4xl">02 <span class="text-2xl text-white/30">/05</span></p>
+    </div>
+  </div>
+
+  <!-- images of the project room wise -->
+  <!-- room1 -->
+  <div class="px-10 py-28">
+    <h2 class="text-2xl mb-4 font-semibold">LivingRoom</h2>
+    <div>
+      <div class="mb-4">
+        <img
+          src="/images/living1.jpg"
+          alt="first room image 1"
+          class="h-120 w-full object-cover"
+        />
+      </div>
+      <div class="grid grid-cols-3 gap-x-4 mb-4">
+        <div class="col-span-2">
+          <img
+            src="/images/living2.jpg"
+            alt="first room image 2"
+            class="h-120 w-full object-cover"
+          />
+        </div>
+        <div>
+          <img
+            src="/images/living3.jpg"
+            alt="first room image 2"
+            class="h-120 w-full object-cover"
+          />
+        </div>
+      </div>
+      <div class="mb-4">
+        <img
+          src="/images/living4.jpg"
+          alt="first room image 1"
+          class="h-120 w-full object-cover"
+        />
+      </div>
+      <div class="grid grid-cols-3 gap-x-4 mb-4">
+        <div>
+          <img
+            src="/images/living5.jpg"
+            alt="first room image 5"
+            class="h-120 w-full object-cover"
+          />
+        </div>
+        <div class="col-span-2">
+          <img
+            src="/images/living6.jpg"
+            alt="first room image 6"
+            class="h-120 w-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- room 2 -->
+
+  <div class="px-10 py-28">
+    <h2 class="text-2xl mb-4 font-semibold">BadRoom - 1</h2>
+    <div>
+      <div class="mb-4">
+        <img
+          src="/images/room1-1.jpg"
+          alt="first room image 1"
+          class="h-120 w-full object-cover"
+        />
+      </div>
+      <div class="grid grid-cols-3 gap-x-4 mb-4">
+        <div class="col-span-2">
+          <img
+            src="/images/room1-2.jpg"
+            alt="first room image 2"
+            class="h-120 w-full object-cover"
+          />
+        </div>
+        <div>
+          <img
+            src="/images/room2-3.jpg"
+            alt="first room image 2"
+            class="h-120 w-full object-cover"
+          />
+        </div>
+      </div>
+      <div class="mb-4">
+        <img
+          src="/images/room2-4.jpg"
+          alt="first room image 1"
+          class="h-120 w-full object-cover"
+        />
+      </div>
+      <div class="grid grid-cols-3 gap-x-4 mb-4">
+        <div>
+          <img
+            src="/images/room2-5.jpg"
+            alt="first room image 5"
+            class="h-120 w-full object-cover"
+          />
+        </div>
+        <div class="col-span-2">
+          <img
+            src="/images/room2-6.jpg"
+            alt="first room image 6"
+            class="h-120 w-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- room 3 -->
+
+  <div class="px-10 py-28">
+    <h2 class="text-2xl mb-4 font-semibold">BadRoom - 2</h2>
+    <div>
+      <div class="mb-4">
+        <img
+          src="/images/room3-1.jpg"
+          alt="first room image 1"
+          class="h-120 w-full object-cover"
+        />
+      </div>
+      <div class="grid grid-cols-3 gap-x-4 mb-4">
+        <div class="col-span-2">
+          <img
+            src="/images/room1-7.jpg"
+            alt="first room image 2"
+            class="h-120 w-full object-cover"
+          />
+        </div>
+        <div>
+          <img
+            src="/images/room1-8.jpg"
+            alt="first room image 2"
+            class="h-120 w-full object-cover"
+          />
+        </div>
+      </div>
+      <div class="mb-4">
+        <img
+          src="/images/room1-1.jpg"
+          alt="first room image 1"
+          class="h-120 w-full object-cover"
+        />
+      </div>
+      <div class="grid grid-cols-3 gap-x-4 mb-4">
+        <div>
+          <img
+            src="/images/room1-2.jpg"
+            alt="first room image 5"
+            class="h-120 w-full object-cover"
+          />
+        </div>
+        <div class="col-span-2">
+          <img
+            src="/images/room1-3.jpg"
+            alt="first room image 6"
+            class="h-120 w-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="relative projects-container py-28">
+    <!-- different projects related proejcts-->
+
+    <div
+      class="related-projects-container p-8 bg-white/10 grid grid-cols-3 gap-4 relative"
+    >
+      <span
+        class="related-tag absolute inline-block bg-black -top-0 left-[50%] -translate-[50%] p-1 px-4 rounded-full uppercase text-md font-semibold"
+        >Discover More</span
+      >
+      <div class="related-projects relative overflow-hidden group">
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/70 z-1"
+        >
+        </div>
+        <p class="absolute top-2 right-2 z-1">
+          LOCATION - <span class="text-white/70 font-[200]">Bruchet</span>
+        </p>
+        <img
+          src="/images/room1-1.jpg"
+          alt="project 1"
+          class="w-full h-100 group-hover:scale-105 transition-all duration-500"
+        />
+        <div class="absolute bottom-0 left-0 w-full p-2 z-1">
+          <div class="flex items-center justify-between">
+            <h3 class="uppercase text-2xl font-bold">Enterprice Villa</h3>
+            <a
+              href=""
+              class="bg-white/40 p-2 px-3 rounded-full group-hover:bg-white/20 transition-all duration-300"
+              >&rarr;</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="related-projects relative overflow-hidden group">
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/70 z-1"
+        >
+        </div>
+        <p class="absolute top-2 right-2 z-1">
+          LOCATION - <span class="text-white/70 font-[200]">Bruchet</span>
+        </p>
+        <img
+          src="/images/room1-1.jpg"
+          alt="project 1"
+          class="w-full h-100 group-hover:scale-105 transition-all duration-500"
+        />
+        <div class="absolute bottom-0 left-0 w-full p-2 z-1">
+          <div class="flex items-center justify-between">
+            <h3 class="uppercase text-2xl font-bold">Enterprice Villa</h3>
+            <a
+              href=""
+              class="bg-white/40 p-2 px-3 rounded-full group-hover:bg-white/20 transition-all duration-300"
+              >&rarr;</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="related-projects relative overflow-hidden group">
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/70 z-1"
+        >
+        </div>
+        <p class="absolute top-2 right-2 z-1">
+          LOCATION - <span class="text-white/70 font-[200]">Bruchet</span>
+        </p>
+        <img
+          src="/images/room1-1.jpg"
+          alt="project 1"
+          class="w-full h-100 group-hover:scale-105 transition-all duration-500"
+        />
+        <div class="absolute bottom-0 left-0 w-full p-2 z-1">
+          <div class="flex items-center justify-between">
+            <h3 class="uppercase text-2xl font-bold">Enterprice Villa</h3>
+            <a
+              href=""
+              class="bg-white/40 p-2 px-3 rounded-full group-hover:bg-white/20 transition-all duration-300"
+              >&rarr;</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="related-projects relative overflow-hidden group">
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/70 z-1"
+        >
+        </div>
+        <p class="absolute top-2 right-2 z-1">
+          LOCATION - <span class="text-white/70 font-[200]">Bruchet</span>
+        </p>
+        <img
+          src="/images/room1-1.jpg"
+          alt="project 1"
+          class="w-full h-100 group-hover:scale-105 transition-all duration-500"
+        />
+        <div class="absolute bottom-0 left-0 w-full p-2 z-1">
+          <div class="flex items-center justify-between">
+            <h3 class="uppercase text-2xl font-bold">Enterprice Villa</h3>
+            <a
+              href=""
+              class="bg-white/40 p-2 px-3 rounded-full group-hover:bg-white/20 transition-all duration-300"
+              >&rarr;</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="related-projects relative overflow-hidden group">
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/70 z-1 z-1"
+        >
+        </div>
+        <p class="absolute top-2 right-2 z-1">
+          LOCATION - <span class="text-white/70 font-[200]">Bruchet</span>
+        </p>
+        <img
+          src="/images/room1-1.jpg"
+          alt="project 1"
+          class="w-full h-100 group-hover:scale-105 transition-all duration-500"
+        />
+        <div class="absolute bottom-0 left-0 w-full p-2">
+          <div class="flex items-center justify-between">
+            <h3 class="uppercase text-2xl font-bold">Enterprice Villa</h3>
+            <a
+              href=""
+              class="bg-white/40 p-2 px-3 rounded-full group-hover:bg-white/20 transition-all duration-300"
+              >&rarr;</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="related-projects relative overflow-hidden group">
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/70 z-1"
+        >
+        </div>
+        <p class="absolute top-2 right-2 z-1">
+          LOCATION - <span class="text-white/70 font-[200]">Bruchet</span>
+        </p>
+        <img
+          src="/images/room1-1.jpg"
+          alt="project 1"
+          class="w-full h-100 group-hover:scale-105 transition-all duration-500"
+        />
+        <div class="absolute bottom-0 left-0 w-full p-2 z-1">
+          <div class="flex items-center justify-between">
+            <h3 class="uppercase text-2xl font-bold">Enterprice Villa</h3>
+            <a
+              href=""
+              class="bg-white/40 p-2 px-3 rounded-full group-hover:bg-white/20 transition-all duration-300"
+              >&rarr;</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger, SplitText } from "gsap/all";
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+
+  gsap.from(".hero-image-container", {
+    scale: 1.2,
+    duration: 1,
+    ease: "expo.out",
+  });
+  gsap.from(".title-tag", {
+    opacity: 0,
+    duration: 1,
+    yPercent: -100,
+    delay: 0.5,
+    ease: "expo.out",
+    stagger: 0.01,
+  });
+  gsap.from(".hero-heading", {
+    opacity: 0,
+    duration: 1,
+    yPercent: 100,
+    delay: 0.5,
+    ease: "expo.out",
+    stagger: 0.02,
+  });
+  const heroDescriptionSplit = SplitText.create(".hero-description", {
+    type: "lines",
+  });
+
+  gsap.from(heroDescriptionSplit.lines, {
+    opacity: 0,
+    duration: 1.5,
+    yPercent: 300,
+    delay: 0.5,
+    ease: "expo.out",
+    stagger: 0.05,
+  });
+
+  // project details
+  const projectDetailsTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".project-details",
+      start: "top center",
+    },
+  });
+
+  const proejctDetailsHeaderSplit = SplitText.create(".project-details-title", {
+    type: "lines",
+  });
+  const proejctDetailsDescriptionSplit = SplitText.create(
+    ".project-details-description",
+    {
+      type: "lines",
+    }
+  );
+  const projectTimelineSplit = SplitText.create(".project-details-timeline", {
+    type: "lines",
+  });
+  projectDetailsTimeline.from(proejctDetailsHeaderSplit.lines, {
+    opacity: 0,
+    duration: 1,
+    yPercent: 300,
+    ease: "expo.out",
+    stagger: 0.05,
+  });
+  projectDetailsTimeline.from(".project-details-images", {
+    opacity: 0,
+    xPercent: 100,
+    duration: 0.3,
+    ease: "expo.out",
+  });
+  projectDetailsTimeline.from(proejctDetailsDescriptionSplit.lines, {
+    opacity: 0,
+    duration: 1,
+    yPercent: 300,
+    ease: "expo.out",
+    stagger: 0.05,
+  });
+  projectDetailsTimeline.from(projectTimelineSplit.lines, {
+    opacity: 0,
+    duration: 1,
+    yPercent: 300,
+    ease: "expo.out",
+    stagger: 0.05,
+  });
+
+  // details informations about rooms animation scroll animation
+
+  const detailsScrollTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".details",
+      start: "top center",
+    },
+  });
+
+  const detailsHeaderSplit = SplitText.create(".project-details-title", {
+    type: "lines",
+  });
+
+  detailsScrollTimeline.from(detailsHeaderSplit.chars, {
+    opacity: 0,
+    duration: 1,
+    yPercent: 80,
+    ease: "expo.out",
+    stagger: 0.02,
+  });
+
+  detailsScrollTimeline.from(".top-grid , .bottom-grid", {
+    opacity: 0,
+    duration: 1,
+    yPercent: 100,
+    ease: "expo.out",
+    stagger: 0.09,
+  });
+
+  //projects
+  const projectsTitleSplit = SplitText.create(".projects-heading", {
+    type: "words,chars",
+  });
+
+  const projectsScrollTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".projects-container",
+      start: "top center",
+    },
+  });
+  projectsScrollTimeline.from(".related-projects-container", {
+    opacity: 0,
+    duration: 1,
+    yPercent: 100,
+    ease: "expo.out",
+  });
+  projectsScrollTimeline.from(".related-tag", {
+    opacity: 0,
+    duration: 1,
+    yPercent: -100,
+    ease: "expo.out",
+  });
+  const realtedProjectSplit = SplitText.create(".related-projects", {
+    type: "lines",
+  });
+
+  projectsScrollTimeline.from(realtedProjectSplit.lines, {
+    opacity: 0,
+    duration: 1,
+    yPercent: 100,
+    ease: "expo.out",
+    stagger: 0.02,
+  });
+</script>
