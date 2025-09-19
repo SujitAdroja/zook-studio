@@ -1,6 +1,15 @@
 ---
 import { FaChair } from "react-icons/fa6";
 import { IoCloseCircle } from "react-icons/io5";
+import "../styles/global.css";
+
+const navLinks = [
+  { name: "Home", link: "/" },
+  { name: "Our Projects", link: "/projects" },
+  { name: "About Us", link: "/about" },
+  { name: "Contact", link: "/contact" },
+  { name: "How we work", link: "/how-we-work" },
+];
 ---
 
 <nav class="fixed w-full top-2 left-[50%] -translate-x-[50%] z-100">
@@ -9,87 +18,107 @@ import { IoCloseCircle } from "react-icons/io5";
       class="w-fit flex items-center gap-2 px-4 py-2 bg-black/50 border border-white/60"
     >
       <h2 class="text-3xl font-semibold text-white">ZOOK</h2>
-      <div class="text-red-700 cursor-pointer open-btn">
+      <div class="open-btn text-red-700 cursor-pointer">
         <FaChair size={25} />
       </div>
     </div>
   </div>
   <div
-    class="absolute -top-120 w-full bg-[#f5f5f5] py-4 px-6 transition-all duration-900 ease-in-out"
+    class="navbar absolute -top-200 w-full bg-[#f5f5f5] py-4 px-2 md:px-6 transition-all duration-400 ease-in-out"
   >
     <header class="flex items-center justify-between mb-12">
       <h1 class="text-black text-6xl font-bold">ZOOK</h1>
       <div class="close-btn flex items-center gap-2 cursor-pointer group">
         <p
-          class="font-bold group-hover:-mr-2 transition-all duration-300 ease-out"
+          class="font-bold text-xl group-hover:-mr-2 transition-all duration-300 ease-in-out"
         >
           Close
         </p>
         <div
-          class="group-hover:text-black text-gray-400 transition-all duration-300 ease-out"
+          class="group-hover:text-black text-gray-400 transition-all duration-400 ease-out"
         >
-          <IoCloseCircle size={30} />
+          <IoCloseCircle size={40} />
         </div>
       </div>
     </header>
 
     <div class="flex items-center justify-between mb-14">
-      <p class="text-black text-5xl w-1/4 mt-4 font-light">
+      <p class="text-black text-md md:text-5xl w-1/2 md:w-1/4 mt-4 font-light">
         When reality looks better than renders.
       </p>
-      <ul class="w-[40%] grid grid-cols-2 gap-y-2 gap-x-8">
-        <li class="text-black text-4xl border-b border-gray-300 cursor-pointer">
-          <a href="/">Home</a>
-        </li>
-        <li class="text-black text-4xl border-b border-gray-300 cursor-pointer">
-          <a href="/how-we-work">How we work</a>
-        </li>
-        <li class="text-black text-4xl border-b border-gray-300 cursor-pointer">
-          <a href="/about">About Us</a>
-        </li>
-        <li class="text-black text-4xl border-b border-gray-300 cursor-pointer">
-          <a href="/contact">Contact</a>
-        </li>
-        <li class="text-black text-4xl border-b border-gray-300 cursor-pointer">
-          <a href="/projects">Projects</a>
-        </li>
-        <li class="text-black text-4xl border-b border-gray-300 cursor-pointer">
-          <a href="/media">Media</a>
-        </li>
+      <ul class="md:w-[40%] grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-8">
+        {
+          navLinks.map((navitem) => (
+            <li class="text-black text-right text-3xl md:text-5xl border-b border-gray-300 cursor-pointer overflow-hidden">
+              <a
+                href={`${navitem.link}`}
+                class="inline-block relative group font-light"
+              >
+                <span class="inline-block absolute -bottom-8 left-0 opacity-0 group-hover:bottom-0 group-hover:opacity-100 transition-all duration-300">
+                  {navitem.name}
+                </span>
+                <span class="inline-block group-hover:-translate-y-10 group-hover:opacity-0 transition-all duration-300">
+                  {navitem.name}
+                </span>
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
 
-    <div class="border-b-4 inline-block">
-      <div class="flex gap-5 items-center py-2 px-6">
+    <div class="border-l-4 border-black md:border-b-4 inline-block">
+      <div
+        class="flex md:gap-5 flex-col md:flex-row md:items-center py-2 px-2 md:px-6"
+      >
         <div class="flex items-center gap-2">
           <span class="text-sm font-bold">Email : </span>
-          <p>Zook@interiors.com</p>
+          <div class="relative group font-light cursor-pointer overflow-hidden">
+            <span
+              class="inline-block group-hover:-translate-y-10 group-hover:opacity-0 transition-all duration-300"
+              >info.zookstudio@gmail.com</span
+            >
+            <span
+              class="inline-block absolute -bottom-8 left-0 opacity-0 group-hover:bottom-0 group-hover:opacity-100 transition-all duration-300"
+              >Let's explore your project</span
+            >
+          </div>
         </div>
         <div class="flex items-center gap-2">
           <span class="text-sm font-bold">Phone : </span>
-          <p>+91 90990 909990</p>
+          <p></p>
+          <div class="relative group font-light cursor-pointer overflow-hidden">
+            <span
+              class="inline-block group-hover:-translate-y-10 group-hover:opacity-0 transition-all duration-300"
+              >+91 90990 909990</span
+            >
+            <span
+              class="inline-block absolute -bottom-8 left-0 opacity-0 group-hover:bottom-0 group-hover:opacity-100 transition-all duration-300"
+              >Contact us</span
+            >
+          </div>
         </div>
       </div>
     </div>
   </div>
-</nav>
 
-<script>
-  function handleMenu() {
-    const menu = document.querySelector("nav div.absolute");
-    if (menu?.classList.contains("-top-200")) {
-      menu.classList.remove("-top-200");
-      menu.classList.add("top-0");
-    } else {
-      menu?.classList.remove("top-0");
-      menu?.classList.add("-top-200");
+  <script>
+    function handleMenu() {
+      const menu = document.querySelector(".navbar");
+      if (menu?.classList.contains("-top-200")) {
+        menu.classList.remove("-top-200");
+        menu.classList.add("top-0");
+      } else {
+        menu?.classList.remove("top-0");
+        menu?.classList.add("-top-200");
+      }
     }
-  }
 
-  document.querySelector(".open-btn")?.addEventListener("click", () => {
-    handleMenu();
-  });
-  document.querySelector(".close-btn")?.addEventListener("click", () => {
-    handleMenu();
-  });
-</script>
+    document.querySelector(".open-btn")?.addEventListener("click", () => {
+      handleMenu();
+    });
+    document.querySelector(".close-btn")?.addEventListener("click", () => {
+      handleMenu();
+    });
+  </script>
+</nav>

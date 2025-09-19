@@ -1,14 +1,18 @@
 <footer class="footer bg-black text-white py-20 mb-20">
-  <div class="px-10">
+  <div class="md:px-10">
     <div class="text-center">
       <div class="text-center">
-        <h2 class="h2-footer text-2xl font-bold">Our Vision</h2>
-        <p class="para-footer mt-2 text-sm w-[40%] mx-auto">
+        <h2 class="h2-footer text-3xl md:text-2xl font-bold">Our Vision</h2>
+        <p
+          class="para-footer mt-2 text-md md:text-sm w-[50%] md:w-[40%] mx-auto mb-20 md:mb-0"
+        >
           Zook studio is more than just a bussiness, it's a testament to our
           shared desire and commitment to transforming space into captive
           stories.
         </p>
-        <h1 class="logo-footer uppercase text-[200px] font-bold">
+        <h1
+          class="w-full logo-footer uppercase text-6xl md:text-[200px] font-bold mb-20 md:mb-0"
+        >
           zook studio
         </h1>
       </div>
@@ -31,14 +35,14 @@
   const scrollTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: ".footer",
-      start: "top center",
+      start: "top 80%",
     },
   });
   const paraSplit = SplitText.create(".para-footer", { type: "lines,chars" });
-  const logoSplit = SplitText.create(".logo-footer", { type: "lines , chars" });
   const h2Split = SplitText.create(".h2-footer", { type: "lines , chars" });
   const navFooterSplit = SplitText.create(".nav-footer li", { type: "lines" });
-  scrollTimeline.from(h2Split.chars, {
+
+  scrollTimeline.from(h2Split.lines, {
     opacity: 0,
     duration: 1,
     yPercent: 100,
@@ -46,26 +50,27 @@
     stagger: 0.02,
   });
 
-  scrollTimeline.from(paraSplit.lines, {
-    opacity: 0,
-    duration: 1,
-    yPercent: 100,
-    ease: "expo.out",
-    stagger: 0.02,
-  });
+  scrollTimeline.from(
+    paraSplit.lines,
+    {
+      opacity: 0,
+      duration: 1,
+      yPercent: 100,
+      ease: "expo.out",
+      stagger: 0.02,
+    },
+    "-=70%"
+  ); // Starts when h2 is 70% complete
 
-  scrollTimeline.from(logoSplit.chars, {
-    opacity: 0,
-    duration: 1,
-    yPercent: 100,
-    ease: "expo.out",
-    stagger: 0.02,
-  });
-  scrollTimeline.from(navFooterSplit.lines, {
-    opacity: 0,
-    duration: 1,
-    yPercent: 100,
-    ease: "expo.out",
-    stagger: 0.2,
-  });
+  scrollTimeline.from(
+    navFooterSplit.lines,
+    {
+      opacity: 0,
+      duration: 1,
+      yPercent: 100,
+      ease: "expo.out",
+      stagger: 0.2,
+    },
+    "-=70%"
+  ); // Starts when para is 70% complete
 </script>

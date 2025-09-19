@@ -21,10 +21,14 @@ import { projects } from "../../constants";
       class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40"
     >
     </div>
-    <div class="absolute bottom-0 p-6 w-full flex items-center justify-between">
+    <div class="absolute bottom-0 p-6 w-full flex items-center justify-center">
       <div class="shrink-0">
-        <p class="title-tag text-white tracking-[0.4em] ml-1">ZOOK STUDIO</p>
-        <h1 class="hero-heading w-full text-white text-7xl font-light">
+        <p class="title-tag text-white tracking-[0.4em] ml-1 text-center">
+          ZOOK STUDIO
+        </p>
+        <h1
+          class="hero-heading w-full text-white text-center text-4xl font-bold md:text-start md:text-7xl md:font-light"
+        >
           Bringing the home of <br /> your dream to reality.
         </h1>
       </div>
@@ -45,7 +49,7 @@ import { projects } from "../../constants";
     >
     </div>
     <p
-      class="para max-w-4xl mx-auto text-white text-4xl font-semibold leading-12 mix-blend-difference"
+      class="para max-w-4xl mx-auto text-white text-3xl md:text-6xl font-semibold md:leading-12 mix-blend-difference"
     >
       With unlimited creativity, <em class="font-thin"
         >we transform your vision into reality, inviting you to</em
@@ -54,27 +58,69 @@ import { projects } from "../../constants";
       >.
     </p>
     <p
-      class="para max-w-xl mx-auto text-white text-md font-light mt-10 w-[60%] mx-auto mix-blend-difference"
+      class="para max-w-2xl md:max-w-xl mx-auto text-white text-md font-light mt-10 mix-blend-difference"
     >
       Every detail is designed to capture the essence of your style and turn the
       space into a reflection of your own identity.
     </p>
   </div>
 
+  <!-- about section -->
+
+  <div class="about-section text-white py-20 md:py-28">
+    <div class="grid grid-cols-1 gap-y-10 md:gap-0 md:grid-cols-2 items-center">
+      <div class="relative about-image justify-self-center">
+        <img
+          src="/homepage/about-team.png"
+          alt=""
+          class="h-80 md:h-140 bg-black"
+        />
+
+        <!-- Left gradient -->
+        <div
+          class="absolute inset-y-0 left-0 w-1/5 bg-gradient-to-r from-black to-transparent"
+        >
+        </div>
+
+        <!-- Right gradient -->
+        <div
+          class="absolute inset-y-0 right-0 w-1/5 bg-gradient-to-l from-black to-transparent"
+        >
+        </div>
+      </div>
+
+      <div>
+        <h3
+          class="about-tagline text-3xl md:text-5xl font-bold max-w-2xl mb-14 leading-tight"
+        >
+          Together we turn every challenge into an opportunity to create unique
+          spaces.
+        </h3>
+        <p
+          class="about-description max-w-xl text-lg md:text-2xl font-semibold mb-14"
+        >
+          Each member bring <em class="font-light">a distinct touch</em>. It is
+          synergy the one that allow us to deliver experiences that <em
+            class="font-light">are not just see, but felt and lived.</em
+          >
+        </p>
+      </div>
+    </div>
+  </div>
   <!-- section -3 detailsmatters sections -->
   <section class="details">
-    <div class="min-h-screen py-28 px-6 container mx-auto">
-      <div class="mb-16 md:px-0 px-5">
+    <div class="min-h-screen py-10 md:py-28 px-2 md:px-6 container mx-auto">
+      <div class="mb-16 md:px-0">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
           <div class="md:col-span-8">
             <h2
-              class="details-header text-5xl md:text-6xl font-modern-negra max-w-lg text-white"
+              class="details-header text-4xl font-bold md:text-6xl egra text-white"
             >
-              Where every details matters <span class="text-white">-</span>{" "}
+              Where every details matters <span class="text-white">-</span>
               From design to reality
             </h2>
           </div>
-          <div
+          <!-- <div
             class="sub-content md:col-span-4 space-y-5 flex flex-col justify-between;"
           >
             <p class="text-lg">
@@ -82,7 +128,7 @@ import { projects } from "../../constants";
               detail — from the first muddle to the final garnish. That care is
               what turns a simple drink into something truly memorable.{" "}
             </p>
-          </div>
+          </div> -->
         </div>
       </div>
       <div
@@ -142,14 +188,14 @@ import { projects } from "../../constants";
 
   <section
     id="project-section"
-    class="min-h-screen py-28 px-6 container mx-auto text-white"
+    class="min-h-screen py-10 md:py-28 px-2 md:px-6 container mx-auto text-white"
   >
     <h2
       class="projects-heading text-5xl md:text-7xl text-white uppercase font-bold mb-10"
     >
       Our Projects
     </h2>
-    <div class="projects grid grid-cols-12 items-start">
+    <div class="projects hidden md:grid grid grid-cols-12 items-start">
       <div class="col-span-6"></div>
       <div class="col-span-3 ml-2 border-b border-white/40">
         <p class="text-white/40">Prize</p>
@@ -158,134 +204,29 @@ import { projects } from "../../constants";
         <p class="text-white/40">Project</p>
       </div>
     </div>
-    <!-- <div class="projects project-1 grid grid-cols-12 gap-x-4 items-start mb-10">
-      <div
-        class="col-span-2 flex items-center justify-between p-2 px-4 bg-white/20 text-white rounded-md"
-      >
-        <p>01</p>
-        <p>2024</p>
-      </div>
-      <div class="col-span-4">
-        <img
-          src="/homepage/hero-image.jpg"
-          alt="project-1"
-          class="rounded-lg border-5 border-white/20 h-70 w-full cover"
-        />
-      </div>
-      <div class="col-span-3 py-4">
-        <h3 class="text-4xl tracking-[-3px] mb-20">
-          Best Residential Interior Apartment Ahembdabad
-        </h3>
-        <a
-          href=""
-          class="inline-block relative uppercase mt-auto p-2 border border-white/20 overflow-hidden
-         before:content-[''] before:absolute before:top-0 before:left-0 before:h-full before:w-0
-         before:bg-white/20 before:transition-all before:duration-300 before:ease-in-out
-         hover:before:w-full"
-          >Discover The Project &rarr;</a
-        >
-      </div>
-      <div class="col-span-3 py-4 font-[200]">
-        <p class="mb-20">Serenity Lake Apartment</p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Necessitatibus voluptatum fugiat eos perferendis neque dolore.
-        </p>
-      </div>
-    </div>
-    <div class="projects project-2 grid grid-cols-12 gap-x-4 items-start mb-10">
-      <div
-        class="col-span-2 flex items-center justify-between p-2 px-4 bg-white/20 text-white rounded-md"
-      >
-        <p>02</p>
-        <p>2025</p>
-      </div>
-      <div class="col-span-4">
-        <img
-          src="/homepage/hero_image.jpg"
-          alt="project-1"
-          class="rounded-lg border-5 border-white/20 h-70 w-full cover"
-        />
-      </div>
-      <div class="col-span-3 py-4">
-        <h3 class="text-4xl tracking-[-3px] mb-20">
-          Best Residential Interior Apartment Romania
-        </h3>
-        <a
-          href=""
-          class="inline-block relative uppercase mt-auto p-2 border border-white/20 overflow-hidden
-         before:content-[''] before:absolute before:top-0 before:left-0 before:h-full before:w-0
-         before:bg-white/20 before:transition-all before:duration-300 before:ease-in-out
-         hover:before:w-full"
-          >Discover The Project &rarr;</a
-        >
-      </div>
-      <div class="col-span-3 py-4 font-[200]">
-        <p class="mb-20">Serenity Lake Apartment</p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Necessitatibus voluptatum fugiat eos perferendis neque dolore.
-        </p>
-      </div>
-    </div>
-    <div class="projects project-3 grid grid-cols-12 gap-x-4 items-start">
-      <div
-        class="col-span-2 flex items-center justify-between p-2 px-4 bg-white/20 text-white rounded-md"
-      >
-        <p>03</p>
-        <p>2025</p>
-      </div>
-      <div class="col-span-4">
-        <img
-          src="/homepage/image-5.jpg"
-          alt="project-1"
-          class="rounded-lg border-5 border-white/20 h-70 w-full cover"
-        />
-      </div>
-      <div class="col-span-3 py-4">
-        <h3 class="text-4xl tracking-[-3px] mb-20">
-          Best Residential Interior Apartment Europe
-        </h3>
-        <a
-          href=""
-          class="inline-block relative uppercase mt-auto p-2 border border-white/20 overflow-hidden
-         before:content-[''] before:absolute before:top-0 before:left-0 before:h-full before:w-0
-         before:bg-white/20 before:transition-all before:duration-300 before:ease-in-out
-         hover:before:w-full"
-          >Discover The Project &rarr;</a
-        >
-      </div>
-      <div class="col-span-3 py-4 font-[200]">
-        <p class="mb-20">Serenity Lake Apartment</p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Necessitatibus voluptatum fugiat eos perferendis neque dolore.
-        </p>
-      </div>
-    </div> -->
 
     <div>
       {
         projects.map((project, index) => (
           <div
-            class={`projects project-${index + 1} grid grid-cols-12 gap-x-4 items-start mb-10`}
+            class={`projects project-${index + 1} grid grid-cols-1 md:grid-cols-12 gap-x-4 gap-y-4 md:gap-y-0  items-start  `}
           >
-            <div class="col-span-2 flex items-center justify-between p-2 px-4 bg-white/20 text-white rounded-md">
+            <div class="md:col-span-2 flex items-center justify-between p-2 px-4 bg-white/20 text-white rounded-md ">
               <p>0{index + 1}</p>
               <p>{project.year}</p>
             </div>
-            <div class="col-span-4">
+            <div class="md:col-span-4">
               <img
                 src={project.image}
                 alt="project-1"
                 class="rounded-lg border-5 border-white/20 h-70 w-full cover"
               />
             </div>
-            <div class="col-span-3 py-4">
+            <div class="hidden md:block md:col-span-3 py-4">
               <h3 class="text-4xl tracking-[-3px] mb-20">{project.title}</h3>
               <a
                 href={`/project/${index + 1}`}
-                class="inline-block relative uppercase mt-auto p-2 border border-white/20 overflow-hidden
+                class=" inline-block relative uppercase mt-auto p-2 border border-white/20 overflow-hidden
          before:content-[''] before:absolute before:top-0 before:left-0 before:h-full before:w-0
          before:bg-white/20 before:transition-all before:duration-300 before:ease-in-out
          hover:before:w-full"
@@ -293,9 +234,30 @@ import { projects } from "../../constants";
                 Discover The Project &rarr;
               </a>
             </div>
-            <div class="col-span-3 py-4 font-[200]">
+            <div class="hidden md:block md:col-span-3 py-4 font-[200]">
               <p class="mb-20">{project.projectTitle}</p>
               <p>{project.description}</p>
+            </div>
+            <div class="block md:hidden">
+              <h3 class="text-4xl tracking-[-3px] mb-6 font-light">
+                {project.title}
+              </h3>
+              <p class="mb-2 text-xl text-white/50">
+                Project -
+                <span class="font-light  mb-4">{project.projectTitle}</span>
+              </p>
+              <p class="mb-14 text-sm tracking-[-0.1px]">
+                {project.description}
+              </p>
+              <a
+                href={`/project/${index + 1}`}
+                class=" inline-block relative uppercase mt-auto p-2 border border-white/20 overflow-hidden
+         before:content-[''] before:absolute before:top-0 before:left-0 before:h-full before:w-0
+         before:bg-white/20 before:transition-all before:duration-300 before:ease-in-out
+         hover:before:w-full mb-14"
+              >
+                Discover The Project <span class="ml-2">&rarr;</span>
+              </a>
             </div>
           </div>
         ))
@@ -356,6 +318,50 @@ import { projects } from "../../constants";
     })
     .to(".content-white-bg", { y: 0, opacity: 1 });
 
+  // about section
+
+  const aboutScrollTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".about-section",
+      start: "top center",
+    },
+  });
+
+  aboutScrollTimeline.from(".about-image", {
+    opacity: 0,
+    xPercent: -200,
+    scale: 0,
+    duration: 1,
+    ease: "expo.out",
+  });
+  const taglineSplitText = SplitText.create(".about-tagline", {
+    type: "lines",
+  });
+  const aboutDescriptionSplitText = SplitText.create(".about-description", {
+    type: "lines",
+  });
+  aboutScrollTimeline.from(
+    taglineSplitText.lines,
+    {
+      opacity: 0,
+      yPercent: 100,
+      duration: 1,
+      ease: "expo.out",
+      stagger: 0.02,
+    },
+    "-=70%"
+  );
+  aboutScrollTimeline.from(
+    aboutDescriptionSplitText.lines,
+    {
+      opacity: 0,
+      yPercent: 100,
+      duration: 1,
+      ease: "expo.out",
+      stagger: 0.02,
+    },
+    "-=70%"
+  );
   // details scroll animation
 
   const detailsScrollTimeline = gsap.timeline({
@@ -369,21 +375,27 @@ import { projects } from "../../constants";
     type: "lines,chars",
   });
 
-  detailsScrollTimeline.from(detailsHeaderSplit.chars, {
-    opacity: 0,
-    duration: 1,
-    yPercent: 80,
-    ease: "expo.out",
-    stagger: 0.02,
-  });
+  detailsScrollTimeline
+    .from(detailsHeaderSplit.lines, {
+      opacity: 0,
+      duration: 1,
+      yPercent: 80,
+      ease: "expo.out",
+      stagger: 0.02,
+    })
+    .from(
+      ".top-grid , .bottom-grid",
+      {
+        opacity: 0,
+        duration: 1,
+        yPercent: 100,
+        ease: "expo.out",
+        stagger: 0.02,
+      },
+      "-=70%"
+    );
 
-  detailsScrollTimeline.from(".top-grid , .bottom-grid", {
-    opacity: 0,
-    duration: 1,
-    yPercent: 100,
-    ease: "expo.out",
-    stagger: 0.09,
-  });
+  detailsScrollTimeline;
 
   //projects
   const projectsTitleSplit = SplitText.create(".projects-heading", {
@@ -402,21 +414,25 @@ import { projects } from "../../constants";
     ease: "expo.out",
     stagger: 0.01,
   });
-  projectsScrollTimeline.from(".project-1 ", {
-    opacity: 0,
-    duration: 1,
-    yPercent: 100,
-    ease: "expo.out",
-  });
+  projectsScrollTimeline.from(
+    ".project-1 ",
+    {
+      opacity: 0,
+      duration: 0.5,
+      yPercent: 100,
+      ease: "expo.out",
+    },
+    "-=70%"
+  );
   projectsScrollTimeline.from(" .project-2 ", {
     opacity: 0,
-    duration: 1,
+    duration: 0.5,
     yPercent: 100,
     ease: "expo.out",
   });
   projectsScrollTimeline.from(" .project-3", {
     opacity: 0,
-    duration: 1,
+    duration: 0.5,
     yPercent: 100,
     ease: "expo.out",
   });
