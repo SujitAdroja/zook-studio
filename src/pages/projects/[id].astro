@@ -146,32 +146,41 @@ const project = projectList.filter((p) => p.type === id)[0];
   >
     <div class="absolute bottom-0 p-6 w-full">
       <div>
-        <p
-          class="title-tag text-white tracking-[0.4em] ml-1 text-xl font-[200]"
-        >
+        <p class="title-tag text-white tracking-[0.4em] ml-1 text-center">
           ZOOK STUDIO
         </p>
-        <h1 class="hero-heading text-white text-7xl font-light mb-4 uppercase">
-          ZOOK {id} Projects
+        <h1
+          class="hero-heading w-full text-white text-center text-4xl font-bold md:text-start md:text-7xl md:font-light"
+        >
+          ZOOK Projects
         </h1>
       </div>
     </div>
   </div>
 
   <div class="py-28 text-white">
-    <div class="flex items-start justify-between px-6">
-      <h2 class="text-4xl font-semibold max-w-xl">
+    <div
+      class="flex flex-col md:flex-row items-center gap-4 md:gap-0 md:items-start md:justify-between px-6"
+    >
+      <p
+        class="block md:hidden text-sm uppercase px-4 py-2 border border-white/40 rounded-full"
+      >
+        ZOOK <span class="font-[200]">{id}</span>
+      </p>
+      <h2
+        class="text-3xl md:text-4xl font-semibold md:max-w-xl text-center md:text-start"
+      >
         Discover our projects and see the story of each one.
       </h2>
       <p
-        class="text-sm uppercase px-4 py-2 border border-white/40 rounded-full"
+        class="hidden md:block text-sm uppercase px-4 py-2 border border-white/40 rounded-full"
       >
         ZOOK <span class="font-[200]">{id}</span>
       </p>
     </div>
   </div>
 
-  <div class="py-28 text-white px-6">
+  <div class="py-28 text-white px-2 md:px-6">
     <div class="mb-20">
       <!-- <div
         class="flex items-end justify-between px-4 mb-20 h-150 bg-[linear-gradient(to_top,rgba(0,0,0,1),transparent),url('/images/living6.jpg')] bg-cover bg-center"
@@ -192,7 +201,7 @@ const project = projectList.filter((p) => p.type === id)[0];
           </p>
         </div>
       </div> -->
-      <div class="grid grid-cols-2 gap-x-4 gap-y-20">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-20">
         {
           project.projects.map((project) => (
             <div class="relative group overflow-hidden">
@@ -202,32 +211,56 @@ const project = projectList.filter((p) => p.type === id)[0];
                 <img
                   src={project.image}
                   alt="living images"
-                  class="h-150 w-full group-hover:scale-103 transition-all duration-400 ease-in-out"
+                  class="h-120 md:h-150 w-full md:group-hover:scale-103 transition-all duration-400 ease-in-out"
                 />
-                <div class="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-end z-2">
-                  <p class="text-white/50 text-lg text-center">
-                    Project Year - {project.year}
-                  </p>
-                  <h2 class="text-6xl font-light mb-4">{project.title}</h2>
-                  <div class="w-full flex item-center justify-center gap-10">
+                <div class="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-between md:justify-end z-2">
+                  <div class="block text-xs md:hidden w-full flex item-center justify-center gap-3 md:gap-10 mt-4">
                     <p class="z-1 font-medium shrink-0">
                       LOCATION -{" "}
-                      <span class="text-white/70 font-[200]">
+                      <span class="text-white/70 md:font-[200]">
                         {project.location}
                       </span>
                     </p>
                     <p class="z-1 font-medium shrink-0">
                       SURFACE -{" "}
-                      <span class="text-white/70 font-[200]">
+                      <span class="text-white/70 md:font-[200]">
                         {project.area}
                       </span>
                     </p>
                     <p class="z-1 font-medium shrink-0">
                       TYPE -{" "}
-                      <span class="text-white/70 font-[200]">
+                      <span class="text-white/70 md:font-[200]">
                         {project.type}
                       </span>
                     </p>
+                  </div>
+                  <div>
+                    <p class="text-white/50 text-lg text-center">
+                      Project Year - {project.year}
+                    </p>
+                    <h2 class="text-4xl md:text-6xl font-light mb-4">
+                      {project.title}
+                    </h2>
+                    <div class="hidden md:block w-full flex item-center justify-center gap-2 md:gap-10">
+                      <p class="z-1 font-medium shrink-0">
+                        LOCATION -{" "}
+                        <span class="text-white/70 font-[200]">
+                          {project.location}
+                        </span>
+                      </p>
+                      <p class="z-1 font-medium shrink-0">
+                        SURFACE -{" "}
+                        <span class="text-white/70 font-[200]">
+                          {project.area}
+                        </span>
+                      </p>
+                      <p class="z-1 font-medium shrink-0">
+                        TYPE -{" "}
+                        <span class="text-white/70 font-[200]">
+                          {project.type}
+                        </span>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </a>

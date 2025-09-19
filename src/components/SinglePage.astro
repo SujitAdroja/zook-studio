@@ -16,14 +16,14 @@
     <div class="absolute bottom-0 p-6 w-full flex items-center justify-center">
       <div>
         <p
-          class="title-tag text-white tracking-[0.4em] ml-1 text-center text-xl font-[200]"
+          class="title-tag text-white tracking-[0.4em] ml-1 text-center uppercase"
         >
-          ZOOK STUDIO
+          Discover
         </p>
         <h1
-          class="hero-heading text-white text-8xl font-bold text-center mb-4 uppercase"
+          class="hero-heading w-full text-white text-center text-4xl font-bold md:text-start md:text-7xl md:font-light uppercase"
         >
-          Master Glory Apartment
+          Epique Home
         </h1>
         <p
           class="hero-description max-w-2xl mx-auto text-white text-xl font-[200] text-center -tracking-[1px]"
@@ -37,15 +37,17 @@
     </div>
   </div>
   <!-- infomation of project  images-->
-  <div class="project-details grid grid-cols-8 py-28">
-    <div class="p-6 h-full flex flex-col justify-between col-span-3">
+  <div
+    class="project-details grid grid-cols-1 gap-y-10 md:gap-0 md:grid-cols-8 py-28"
+  >
+    <div class="px-2 md:p-6 h-full flex flex-col justify-between col-span-3">
       <div>
         <h3
-          class="project-details-title text-5xl font-bold tracking-[-2px] mb-10"
+          class="project-details-title text-5xl font-bold tracking-[-2px] mb-10 text-center md:text-start"
         >
           Spaces designed to stimulate relaxation and promote well-being
         </h3>
-        <p class="project-details-description font-[200]">
+        <p class="project-details-description font-[200] mb-10 md:mb-0">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae
           ad similique expedita eos laudantium provident eligendi repellat,
           magnam amet quaerat iste aliquid quam at odio veritatis voluptatum
@@ -53,34 +55,36 @@
         </p>
       </div>
       <div class="flex items-center gap-10">
-        <p class="project-details-timeline text-md">
+        <p class="project-details-timeline text-xs md:text-md shrink-0">
           LOCATION - <span class="text-white/50 font-[200]">Bruchet</span>
         </p>
-        <p class="project-details-timeline text-md">
+        <p class="project-details-timeline text-xs md:text-md shrink-0">
           SURFACE - <span class="text-white/50 font-[200]">350m2</span>
         </p>
-        <p class="project-details-timeline text-md">
+        <p class="project-details-timeline text-xs md:text-md shrink-0">
           YEAR - <span class="text-white/50 font-[200]">2025</span>
         </p>
       </div>
     </div>
     <div class="project-details-images p-4 px-6 pr-0 bg-white/10 col-span-5">
-      <h3 class="font-bold mb-4 text-2xl text-right pr-6">
+      <h3 class="font-bold mb-4 text-lg md:text-2xl text-right pr-6">
         Project Hightlights
       </h3>
       <img
         src="/homepage/image-5.jpg"
         alt="carousel image"
-        class="w-full h-120 mb-4"
+        class="w-full h-80 md:h-120 mb-4"
       />
-      <p class="text-4xl">02 <span class="text-2xl text-white/30">/05</span></p>
+      <p class="text-2xl md:text-4xl">
+        02 <span class="text-lg md:text-2xl text-white/30">/05</span>
+      </p>
     </div>
   </div>
 
   <!-- images of the project room wise -->
   <!-- room1 -->
-  <div class="px-10 py-28">
-    <h2 class="text-2xl mb-4 font-semibold">LivingRoom</h2>
+  <div class="px-2 md:px-10 py-10 md:py-28">
+    <h2 class="text-lg md:text-2xl mb-4 font-semibold">LivingRoom</h2>
     <div>
       <div class="mb-4">
         <img
@@ -133,8 +137,8 @@
 
   <!-- room 2 -->
 
-  <div class="px-10 py-28">
-    <h2 class="text-2xl mb-4 font-semibold">BadRoom - 1</h2>
+  <div class="px-2 md:px-10 py-10 md:py-28">
+    <h2 class="text-lg md:text-2xl mb-4 font-semibold">BadRoom - 1</h2>
     <div>
       <div class="mb-4">
         <img
@@ -187,8 +191,8 @@
 
   <!-- room 3 -->
 
-  <div class="px-10 py-28">
-    <h2 class="text-2xl mb-4 font-semibold">BadRoom - 2</h2>
+  <div class="px-2 md:px-10 py-10 md:py-28">
+    <h2 class="text-lg md:text-2xl mb-4 font-semibold">BadRoom - 2</h2>
     <div>
       <div class="mb-4">
         <img
@@ -243,7 +247,7 @@
     <!-- different projects related proejcts-->
 
     <div
-      class="related-projects-container p-8 bg-white/10 grid grid-cols-3 gap-4 relative"
+      class="related-projects-container p-8 bg-white/10 grid grid-cols-1 md:grid-cols-3 gap-4 relative"
     >
       <span
         class="related-tag absolute inline-block bg-black -top-0 left-[50%] -translate-[50%] p-1 px-4 rounded-full uppercase text-md font-semibold"
@@ -469,20 +473,28 @@
     duration: 0.3,
     ease: "expo.out",
   });
-  projectDetailsTimeline.from(proejctDetailsDescriptionSplit.lines, {
-    opacity: 0,
-    duration: 1,
-    yPercent: 300,
-    ease: "expo.out",
-    stagger: 0.05,
-  });
-  projectDetailsTimeline.from(projectTimelineSplit.lines, {
-    opacity: 0,
-    duration: 1,
-    yPercent: 300,
-    ease: "expo.out",
-    stagger: 0.05,
-  });
+  projectDetailsTimeline.from(
+    proejctDetailsDescriptionSplit.lines,
+    {
+      opacity: 0,
+      duration: 1,
+      yPercent: 300,
+      ease: "expo.out",
+      stagger: 0.05,
+    },
+    "-=70%"
+  );
+  projectDetailsTimeline.from(
+    projectTimelineSplit.lines,
+    {
+      opacity: 0,
+      duration: 1,
+      yPercent: 300,
+      ease: "expo.out",
+      stagger: 0.05,
+    },
+    "-=70%"
+  );
 
   // details informations about rooms animation scroll animation
 
@@ -530,21 +542,30 @@
     yPercent: 100,
     ease: "expo.out",
   });
-  projectsScrollTimeline.from(".related-tag", {
-    opacity: 0,
-    duration: 1,
-    yPercent: -100,
-    ease: "expo.out",
-  });
+
+  projectsScrollTimeline.from(
+    ".related-tag",
+    {
+      opacity: 0,
+      duration: 1,
+      yPercent: -100,
+      ease: "expo.out",
+    },
+    "-=70%"
+  );
   const realtedProjectSplit = SplitText.create(".related-projects", {
     type: "lines",
   });
 
-  projectsScrollTimeline.from(realtedProjectSplit.lines, {
-    opacity: 0,
-    duration: 1,
-    yPercent: 100,
-    ease: "expo.out",
-    stagger: 0.02,
-  });
+  projectsScrollTimeline.from(
+    realtedProjectSplit.lines,
+    {
+      opacity: 0,
+      duration: 1,
+      yPercent: 100,
+      ease: "expo.out",
+      stagger: 0.02,
+    },
+    "-=70%"
+  );
 </script>
