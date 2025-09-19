@@ -1,5 +1,6 @@
 ---
 import { projects } from "../../constants";
+import FAQ from "../FAQ.astro";
 ---
 
 <section>
@@ -22,14 +23,16 @@ import { projects } from "../../constants";
     >
     </div>
     <div
-      class="absolute bottom-10 md:bottom-0 p-6 w-full flex items-center justify-center"
+      class="absolute bottom-10 md:bottom-0 p-6 w-full flex items-center justify-center md:justify-start"
     >
       <div class="shrink-0">
-        <p class="title-tag text-white tracking-[0.4em] ml-1 text-center">
+        <p
+          class="title-tag text-white tracking-[0.4em] ml-1 text-center md:text-start"
+        >
           ZOOK STUDIO
         </p>
         <h1
-          class="hero-heading w-full text-white text-center text-4xl font-bold md:text-start md:text-7xl md:font-light"
+          class="hero-heading w-full text-white text-center md:text-start text-4xl font-bold md:text-start md:text-7xl md:font-light"
         >
           Bringing the home of <br /> your dream to reality.
         </h1>
@@ -51,7 +54,7 @@ import { projects } from "../../constants";
     >
     </div>
     <p
-      class="para max-w-4xl mx-auto text-white text-3xl md:text-6xl font-semibold md:leading-12 mix-blend-difference"
+      class="para max-w-4xl mx-auto text-white text-3xl md:text-5xl font-semibold md:leading-12 mix-blend-difference"
     >
       With unlimited creativity, <em class="font-thin"
         >we transform your vision into reality, inviting you to</em
@@ -211,7 +214,7 @@ import { projects } from "../../constants";
       {
         projects.map((project, index) => (
           <div
-            class={`projects project-${index + 1} grid grid-cols-1 md:grid-cols-12 gap-x-4 gap-y-4 md:gap-y-0  items-start  `}
+            class={`projects project-${index + 1} grid grid-cols-1 md:grid-cols-12 gap-x-4 gap-y-4 md:gap-y-0  items-start  md:mb-4`}
           >
             <div class="md:col-span-2 flex items-center justify-between p-2 px-4 bg-white/20 text-white rounded-md ">
               <p>0{index + 1}</p>
@@ -266,6 +269,7 @@ import { projects } from "../../constants";
       }
     </div>
   </section>
+  <FAQ />
 </section>
 
 <script>

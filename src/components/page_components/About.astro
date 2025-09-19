@@ -1,40 +1,236 @@
+---
+const team = [
+  {
+    name: "John Doe",
+    role: "Cofounder & Team Leader",
+    image: "/peopleImages/person1.jpg",
+    about:
+      "ipsum earum atque, pariatur aliq ipsam quaerat et ut id tenetur sed nisi saepe, fugit totam velit!",
+  },
+  {
+    name: "Juli chavla",
+    role: "Cofounder & Project Manager",
+    image: "/peopleImages/person2.jpg",
+    about:
+      "ipsum earum atque, pariatur aliq ipsam quaerat et ut id tenetur sed nisi saepe, fugit totam velit!",
+  },
+  {
+    name: "suzen d",
+    role: "Cofounder & Architect",
+    image: "/peopleImages/person3.jpg",
+    about:
+      "ipsum earum atque, pariatur aliq ipsam quaerat et ut id tenetur sed nisi saepe, fugit totam velit!",
+  },
+];
+---
+
 <section>
   <!-- <div
   class={`relative h-screen  bg-[linear-gradient(to_top,rgba(0,0,0,1),transparent),url('/homepage/hero-image.jpg')] bg-cover bg-center`}
   > -->
   <div class={`relative h-screen overflow-hidden`}>
-    <video
-      autoplay
-      loop
-      muted
-      playsinline
-      class="absolute inset-0 w-full h-full object-cover"
-    >
-      <source src="/videos/home_screen_video.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
     <div
-      class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40"
+      class={`hero-image-container relative h-screen  bg-[linear-gradient(to_top,rgba(0,0,0,1),transparent),url('/homepage/hero-image.jpg')] bg-cover bg-center`}
     >
-    </div>
-    <div class="absolute inset-0 p-6">
-      <h1 class="text-white text-6xl font-light mt-4 w-1/2">
-        Bringing the home of <br /> your dream to reality.
-      </h1>
+      <div
+        class="absolute bottom-10 md:bottom-0 p-6 w-full flex items-center justify-center"
+      >
+        <div>
+          <p
+            class="title-tag text-white tracking-[0.4em] ml-1 text-center uppercase"
+          >
+            zook studio
+          </p>
+          <h1
+            class="hero-heading w-full text-white text-center text-4xl font-bold md:text-7xl md:font-light uppercase"
+          >
+            Meet the team
+          </h1>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="max-w-4xl mx-auto text-center my-60 px-6">
-    <p class="text-white text-4xl font-semibold leading-12">
-      With unlimited creativity, <em class="font-thin"
-        >we transform your vision into reality, inviting you to</em
-      > discover a universe of unique and memorable <em class="font-thin"
-        >experiences</em
-      >.
+  <div class="md:py-28 text-white">
+    <div class="grid grid-cols-1 md:grid-cols-3">
+      <div class="bg-white/10 py-4 px-2 md:p-4">
+        <img
+          src="/peopleImages/person1.jpg"
+          alt="team image"
+          class="about-team-image w-full h-60 object-cover object-center mb-2 transition-all duration-300 ease-in-out"
+        />
+        <div class="mb-4">
+          <h3
+            class="subtitle font-light italic text-5xl uppercase transition-all duration-300 ease-in-out"
+          >
+            Our
+          </h3>
+          <h3
+            class="title font-bold text-5xl uppercase transition-all duration-300 ease-in-out"
+          >
+            Team
+          </h3>
+        </div>
+        <p
+          class="about-team font-light text-sm tracking-[-0.5px] mb-20 transition-all duration-300 ease-in-out"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
+          laborum molestiae quo, accusamus ipsum earum atque, pariatur aliquid
+          ipsam quaerat et ut id tenetur sed nisi saepe, fugit totam velit!
+        </p>
+        <a
+          href="/contact"
+          class="inline-block relative uppercase mt-auto p-2 border border-white/20 font-light text-sm overflow-hidden
+         before:content-[''] before:absolute before:top-0 before:left-0 before:h-full before:w-0
+         before:bg-white/20 before:transition-all before:duration-300 before:ease-in-out
+         hover:before:w-full"
+        >
+          Contact Us <span class="ml-4">&rarr;</span>
+        </a>
+      </div>
+      <div class="col-span-2 py-4 px-2 md:p-4 self-center">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-0">
+          {
+            team.map((member, index) => (
+              <div
+                class={`person person-${index + 1} relative cursor-pointer group`}
+                data-person={index}
+              >
+                <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/10 to-black/40 z-1" />
+
+                <img
+                  src={member.image}
+                  alt=""
+                  class="md:h-full h-80 w-full object-cover group-hover:blur-xs transition-all duration-300 ease-in-out"
+                />
+                <div class="absolute top-0 left-0 h-full w-full md:opacity-0 md:group-hover:opacity-100 flex items-end justify-between z-2 p-2 transition-all duration-300 ease-in-out">
+                  <p>{member.name}</p>
+                  <p class="font-light">{member.role}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="about relative text-center h-screen flex flex-col items-center justify-center px-6"
+  >
+    <p
+      class="para max-w-5xl mx-auto text-white text-3xl md:text-5xl font-semibold md:leading-12 mix-blend-difference"
+    >
+      Our work revolves around a deep commitment to design. The outcome? A
+      visual experience that goes beyond all expectations.
     </p>
-    <p class="text-white text-md font-light mt-10 w-[60%] mx-auto">
-      Every detail is designed to capture the essence of your style and turn the
-      space into a reflection of your own identity.
+    <p
+      class="para max-w-2xl md:max-w-xl mx-auto text-white text-md font-light mt-10 mix-blend-difference"
+    >
+      Our goal is to bring value through a design that not only impresses, but
+      also provides a memorable experience tailored to your needs and lifestyle.
     </p>
   </div>
+  <div class={`relative h-screen overflow-hidden text-white`}>
+    <div
+      class={`hero-image-container relative h-screen  bg-[linear-gradient(to_top,rgba(0,0,0,1),transparent),url('/images/living7.jpg')] bg-cover bg-center`}
+    >
+      <div
+        class="absolute bottom-10 md:bottom-0 p-6 w-full flex items-center justify-center"
+      >
+        <div class="flex flex-col items-center">
+          <p
+            class="title-tag text-white tracking-[0.4em] ml-1 text-center uppercase"
+          >
+            Explore a new world
+          </p>
+          <h1
+            class="hero-heading w-full text-white text-center text-4xl font-bold md:text-7xl uppercase"
+          >
+            Zook Projects
+          </h1>
+          <a
+            href="/projects"
+            class="inline-block relative uppercase mt-auto p-2 border border-white/20 font-light text-sm overflow-hidden
+         before:content-[''] before:absolute before:top-0 before:left-0 before:h-full before:w-0
+         before:bg-white/20 before:transition-all before:duration-300 before:ease-in-out
+         hover:before:w-full"
+          >
+            Click here <span class="ml-4">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="h-screen flex items-center justify-center text-white">
+    <div class="flex flex-col items-center">
+      <h2 class="text-3xl md:text-5xl font-bold mb-20">Let's work together.</h2>
+      <a
+        href="/contact"
+        class="inline-block uppercase text-xl border-b border-white/20 hover:border-white/80 transition-all duration-300 mb-10"
+        >contact us</a
+      >
+      <p class="tracking-[-0.5px] font-light">
+        An new unique vision with unlimited possibilities.
+      </p>
+    </div>
+  </div>
 </section>
+
+<script>
+  const team = [
+    {
+      name: "John Doe",
+      role: "Cofounder & Team Leader",
+      image: "/peopleImages/person1.jpg",
+      about:
+        "ipsum earum atque, pariatur aliq ipsam quaerat et ut id tenetur sed nisi saepe, fugit totam velit!",
+    },
+    {
+      name: "Juli chavla",
+      role: "Cofounder & Project Manager",
+      image: "/peopleImages/person2.jpg",
+      about:
+        "ipsum earum atque, pariatur aliq ipsam quaerat et ut id tenetur sed nisi saepe, fugit totam velit!",
+    },
+    {
+      name: "suzen d",
+      role: "Cofounder & Architect",
+      image: "/peopleImages/person3.jpg",
+      about:
+        "ipsum earum atque, pariatur aliq ipsam quaerat et ut id tenetur sed nisi saepe, fugit totam velit!",
+    },
+  ];
+  const persons = document.querySelectorAll(".person");
+  const image = document.querySelector(".about-team-image");
+  const title = document.querySelector(".title");
+  const subtitle = document.querySelector(".subtitle");
+  const aboutDescription = document.querySelector(".about-team");
+
+  const original = {
+    image: image?.getAttribute("src"),
+    title: title?.textContent,
+    subtitle: subtitle?.textContent,
+    about: aboutDescription?.textContent,
+  };
+  persons.forEach((person) => {
+    person.addEventListener("mouseenter", function (this: HTMLElement) {
+      const index = this.dataset.person; // we set data-person={index}
+      if (index !== undefined) {
+        const person = team[parseInt(index)];
+        image.src = person.image;
+        title.textContent = person.name;
+        subtitle.textContent = "Our team";
+        aboutDescription.textContent = person.about;
+      }
+    });
+    person.addEventListener("mouseleave", function () {
+      // reset to original values
+      image.src = original.image;
+      title.textContent = original.title;
+      subtitle.textContent = original.subtitle;
+      aboutDescription.textContent = original.about;
+    });
+  });
+</script>
