@@ -158,7 +158,7 @@ const project = projectList.filter((p) => p.type === id)[0];
     </div>
   </div>
 
-  <div class="py-28 text-white">
+  <div class="py-20 md:py-28 text-white">
     <div
       class="flex flex-col md:flex-row items-center gap-4 md:gap-0 lg:items-start md:justify-between px-6"
     >
@@ -180,27 +180,8 @@ const project = projectList.filter((p) => p.type === id)[0];
     </div>
   </div>
 
-  <div class="py-28 text-white px-2 md:px-6">
-    <div class="mb-20">
-      <!-- <div
-        class="flex items-end justify-between px-4 mb-20 h-150 bg-[linear-gradient(to_top,rgba(0,0,0,1),transparent),url('/images/living6.jpg')] bg-cover bg-center"
-      >
-        <div>
-          <p class="text-white/50 text-lg">Project Year - 2025</p>
-          <h2 class="text-6xl font-medium">Epique Home</h2>
-        </div>
-        <div class="flex item-center gap-20">
-          <p class="z-1 font-medium">
-            LOCATION - <span class="text-white/70 font-[200]">Bruchet</span>
-          </p>
-          <p class="z-1 font-medium">
-            SURFACE - <span class="text-white/70 font-[200]">350m2</span>
-          </p>
-          <p class="z-1 font-medium">
-            TYPE - <span class="text-white/70 font-[200]">Commercial</span>
-          </p>
-        </div>
-      </div> -->
+  <div class="py-20 md:py-28 text-white px-2 md:px-6">
+    <div class="md:mb-20">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-20">
         {
           project.projects.map((project) => (
@@ -268,101 +249,6 @@ const project = projectList.filter((p) => p.type === id)[0];
           ))
         }
       </div>
-    </div>
-    <div class="mb-20">
-      <!-- <div
-        class="flex items-end justify-between px-4 mb-20 h-150 bg-[linear-gradient(to_top,rgba(0,0,0,1),transparent),url('/images/living4.jpg')] bg-cover bg-center"
-      >
-        <div>
-          <p class="text-white/50 text-lg">Project Year - 2025</p>
-          <h2 class="text-6xl font-medium">Epique Home</h2>
-        </div>
-        <div class="flex item-center gap-20">
-          <p class="z-1 font-medium">
-            LOCATION - <span class="text-white/70 font-[200]">Bruchet</span>
-          </p>
-          <p class="z-1 font-medium">
-            SURFACE - <span class="text-white/70 font-[200]">350m2</span>
-          </p>
-          <p class="z-1 font-medium">
-            TYPE - <span class="text-white/70 font-[200]">Commercial</span>
-          </p>
-        </div>
-      </div> -->
-      <!-- 
-      <div class="grid grid-cols-2 gap-x-10">
-        <div class="relative">
-          <a href="/project/1">
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-black to-transparent"
-            >
-            </div>
-
-            <img
-              src="/images/living3.jpg"
-              alt="living images"
-              class="h-150 w-full"
-            />
-            <div
-              class="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-end"
-            >
-              <p class="text-white/50 text-lg text-center">
-                Project Year - 2025
-              </p>
-              <h2 class="text-6xl font-light mb-4">Epique Home</h2>
-              <div class="w-full flex item-center justify-center gap-10">
-                <p class="z-1 font-medium shrink-0">
-                  LOCATION - <span class="text-white/70 font-[200]"
-                    >Bruchet</span
-                  >
-                </p>
-                <p class="z-1 font-medium shrink-0">
-                  SURFACE - <span class="text-white/70 font-[200]">350m2</span>
-                </p>
-                <p class="z-1 font-medium shrink-0">
-                  TYPE - <span class="text-white/70 font-[200]">Commercial</span
-                  >
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="relative">
-          <a href="/project/1"
-            ><div
-              class="absolute inset-0 bg-gradient-to-t from-black to-transparent"
-            >
-            </div>
-            <img
-              src="/images/living5.jpg"
-              alt="living images"
-              class="h-150 w-full"
-            />
-            <div
-              class="absolute top-0 left-0 w-full h-full flex flex-col items-center justify-end"
-            >
-              <p class="text-white/50 text-lg text-center">
-                Project Year - 2025
-              </p>
-              <h2 class="text-6xl font-light mb-4">Epique Home</h2>
-              <div class="w-full flex item-center justify-center gap-10">
-                <p class="z-1 font-medium shrink-0">
-                  LOCATION - <span class="text-white/70 font-[200]"
-                    >Bruchet</span
-                  >
-                </p>
-                <p class="z-1 font-medium shrink-0">
-                  SURFACE - <span class="text-white/70 font-[200]">350m2</span>
-                </p>
-                <p class="z-1 font-medium shrink-0">
-                  TYPE - <span class="text-white/70 font-[200]">Commercial</span
-                  >
-                </p>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div> -->
     </div>
   </div>
 </Layout>
