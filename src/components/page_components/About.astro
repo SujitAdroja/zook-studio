@@ -51,9 +51,9 @@ const team = [
     </div>
   </div>
 
-  <div class="md:py-28 text-white">
+  <div class="teams-grid md:py-28 text-white">
     <div class="grid grid-cols-1 md:grid-cols-3">
-      <div class="bg-white/10 py-4 px-2 md:p-4">
+      <div class="teams-grid-left bg-white/10 py-4 px-2 md:p-4">
         <img
           src="/peopleImages/person1.jpg"
           alt="team image"
@@ -88,7 +88,7 @@ const team = [
           Contact Us <span class="ml-4">&rarr;</span>
         </a>
       </div>
-      <div class="col-span-2 py-4 px-2 md:p-4 self-center">
+      <div class="teams-grid-right col-span-2 py-4 px-2 md:p-4 self-center">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-0">
           {
             team.map((member, index) => (
@@ -140,18 +140,18 @@ const team = [
       >
         <div class="flex flex-col items-center">
           <p
-            class="title-tag text-white tracking-[0.4em] ml-1 text-center uppercase"
+            class="title title-tag text-white tracking-[0.4em] ml-1 text-center uppercase"
           >
             Explore a new world
           </p>
           <h1
-            class="hero-heading w-full text-white text-center text-4xl font-bold md:text-7xl uppercase"
+            class="title hero-heading w-full text-white text-center text-4xl font-bold md:text-7xl uppercase"
           >
             Zook Projects
           </h1>
           <a
             href="/projects"
-            class="inline-block relative uppercase mt-auto p-2 border border-white/20 font-light text-sm overflow-hidden
+            class="title inline-block relative uppercase mt-auto p-2 border border-white/20 font-light text-sm overflow-hidden
          before:content-[''] before:absolute before:top-0 before:left-0 before:h-full before:w-0
          before:bg-white/20 before:transition-all before:duration-300 before:ease-in-out
          hover:before:w-full"
@@ -163,17 +163,17 @@ const team = [
     </div>
   </div>
 
-  <div class="h-screen flex items-center justify-center text-white">
+  <div class="py-30 md:py-60 flex items-center justify-center text-white">
     <div class="flex flex-col items-center">
-      <h2 class="text-3xl md:text-5xl font-bold mb-10 md:mb-20">
+      <h2 class="title text-3xl md:text-5xl font-bold mb-10">
         Let's work together.
       </h2>
       <a
         href="/contact"
-        class="inline-block uppercase text-xl border-b border-white/20 hover:border-white/80 transition-all duration-300 mb-10"
+        class="title inline-block uppercase text-xl border-b border-white/20 hover:border-white/80 transition-all duration-300 mb-10"
         >contact us</a
       >
-      <p class="tracking-[-0.5px] font-light">
+      <p class="title tracking-[-0.5px] font-light">
         An new unique vision with unlimited possibilities.
       </p>
     </div>
@@ -181,7 +181,16 @@ const team = [
 </section>
 
 <script>
-  const team = [
+  // Define a type for the team member objects for better type safety
+  interface TeamMember {
+    name: string;
+    role: string;
+    image: string;
+    about: string;
+  }
+
+  // Explicitly type the team array
+  const team: TeamMember[] = [
     {
       name: "John Doe",
       role: "Cofounder & Team Leader",
@@ -204,35 +213,139 @@ const team = [
         "ipsum earum atque, pariatur aliq ipsam quaerat et ut id tenetur sed nisi saepe, fugit totam velit!",
     },
   ];
-  const persons = document.querySelectorAll(".person");
-  const image = document.querySelector(".about-team-image");
-  const title = document.querySelector(".title");
-  const subtitle = document.querySelector(".subtitle");
-  const aboutDescription = document.querySelector(".about-team");
 
-  const original = {
-    image: image?.getAttribute("src"),
-    title: title?.textContent,
-    subtitle: subtitle?.textContent,
-    about: aboutDescription?.textContent,
-  };
-  persons.forEach((person) => {
-    person.addEventListener("mouseenter", function (this: HTMLElement) {
-      const index = this.dataset.person; // we set data-person={index}
-      if (index !== undefined) {
-        const person = team[parseInt(index)];
-        image.src = person.image;
-        title.textContent = person.name;
-        subtitle.textContent = "Our team";
-        aboutDescription.textContent = person.about;
-      }
+  // Get references to the DOM elements and assert their types
+  const persons: NodeListOf<HTMLElement> = document.querySelectorAll(".person");
+  const image = document.querySelector(
+    ".about-team-image"
+  ) as HTMLImageElement | null;
+  const title = document.querySelector(".title") as HTMLElement | null;
+  const subtitle = document.querySelector(".subtitle") as HTMLElement | null;
+  const aboutDescription = document.querySelector(
+    ".about-team"
+  ) as HTMLElement | null;
+
+  // Ensure all elements exist before proceeding
+  if (image && title && subtitle && aboutDescription) {
+    // Define a type for the original values
+    interface OriginalValues {
+      image: string | null;
+      title: string | null;
+      subtitle: string | null;
+      about: string | null;
+    }
+
+    // Store the original values with their types
+    const original: OriginalValues = {
+      image: image.getAttribute("src"),
+      title: title.textContent,
+      subtitle: subtitle.textContent,
+      about: aboutDescription.textContent,
+    };
+
+    persons.forEach((person: HTMLElement) => {
+      person.addEventListener("mouseenter", () => {
+        // Use optional chaining and a type guard for safety
+        const index = person.dataset.person;
+        if (index !== undefined) {
+          const personIndex = parseInt(index);
+          const teamMember = team[personIndex];
+
+          // Update content if the team member exists
+          if (teamMember) {
+            image.src = teamMember.image;
+            title.textContent = teamMember.name;
+            subtitle.textContent = "Our team"; // This seems static, but kept as is
+            aboutDescription.textContent = teamMember.about;
+          }
+        }
+      });
+
+      person.addEventListener("mouseleave", () => {
+        // Reset to original values with null checks
+        image.src = original.image || ""; // Provide a default empty string for safety
+        if (original.title !== null) title.textContent = original.title;
+        if (original.subtitle !== null)
+          subtitle.textContent = original.subtitle;
+        if (original.about !== null)
+          aboutDescription.textContent = original.about;
+      });
     });
-    person.addEventListener("mouseleave", function () {
-      // reset to original values
-      image.src = original.image;
-      title.textContent = original.title;
-      subtitle.textContent = original.subtitle;
-      aboutDescription.textContent = original.about;
+  }
+
+  // animation script starts from here-----------------------------------------
+  import { gsap } from "gsap";
+  import { ScrollTrigger, SplitText } from "gsap/all";
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+
+  const titleSplit = SplitText.create(".hero-heading", { type: "words,chars" });
+  const titelTagSplit = SplitText.create(".title-tag", { type: "chars" });
+  gsap.from(titelTagSplit.chars, {
+    opacity: 0,
+    duration: 1,
+    yPercent: 100,
+    ease: "expo.out",
+    stagger: 0.02,
+  });
+  gsap.from(titleSplit.chars, {
+    opacity: 0,
+    duration: 1,
+    yPercent: 100,
+    ease: "expo.out",
+    stagger: 0.01,
+  });
+
+  const scrollTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".teams-grid",
+      start: "top center",
+    },
+  });
+
+  scrollTimeline.from(".teams-grid-left", {
+    opacity: 0,
+    duration: 1.5,
+    xPercent: -300,
+    ease: "expo.out",
+  });
+
+  const aboutTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".about",
+      start: "top top",
+    },
+  });
+
+  gsap.utils.toArray(".para").forEach((para: any) => {
+    gsap.from(para, {
+      y: 200,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.02,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: para,
+        start: "top 90%",
+        toggleActions: "play none none none",
+      },
+    });
+  });
+
+  gsap.utils.toArray(".title").forEach((title: any) => {
+    const titleTextSplit = SplitText.create(title, {
+      type: "chars",
+    });
+    gsap.from(titleTextSplit.chars, {
+      y: 20,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.02,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: title,
+        start: "top 90%",
+        toggleActions: "play none none none",
+      },
     });
   });
 </script>

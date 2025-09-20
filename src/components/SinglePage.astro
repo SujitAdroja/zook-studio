@@ -86,16 +86,18 @@
   <!-- images of the project room wise -->
   <!-- room1 -->
   <div class="px-2 lg:px-10 py-10 md:py-28">
-    <h2 class="text-lg md:text-2xl mb-4 font-semibold">LivingRoom</h2>
+    <h2 class="room-heading text-lg md:text-2xl mb-4 font-semibold">
+      LivingRoom
+    </h2>
     <div>
-      <div class="mb-4">
+      <div class="room-images mb-4">
         <img
           src="/images/living1.jpg"
           alt="first room image 1"
           class="h-120 w-full object-cover"
         />
       </div>
-      <div class="grid grid-cols-3 gap-x-4 mb-4">
+      <div class="room-images grid grid-cols-3 gap-x-4 mb-4">
         <div class="col-span-2">
           <img
             src="/images/living2.jpg"
@@ -111,14 +113,14 @@
           />
         </div>
       </div>
-      <div class="mb-4">
+      <div class="room-images mb-4">
         <img
           src="/images/living4.jpg"
           alt="first room image 1"
           class="h-120 w-full object-cover"
         />
       </div>
-      <div class="grid grid-cols-3 gap-x-4 mb-4">
+      <div class="room-images grid grid-cols-3 gap-x-4 mb-4">
         <div>
           <img
             src="/images/living5.jpg"
@@ -140,16 +142,18 @@
   <!-- room 2 -->
 
   <div class="px-2 lg:px-10 py-10 md:py-28">
-    <h2 class="text-lg md:text-2xl mb-4 font-semibold">BadRoom - 1</h2>
+    <h2 class="room-heading text-lg md:text-2xl mb-4 font-semibold">
+      BadRoom - 1
+    </h2>
     <div>
-      <div class="mb-4">
+      <div class="room-images mb-4">
         <img
           src="/images/room1-1.jpg"
           alt="first room image 1"
           class="h-120 w-full object-cover"
         />
       </div>
-      <div class="grid grid-cols-3 gap-x-4 mb-4">
+      <div class="room-images grid grid-cols-3 gap-x-4 mb-4">
         <div class="col-span-2">
           <img
             src="/images/room1-2.jpg"
@@ -165,14 +169,14 @@
           />
         </div>
       </div>
-      <div class="mb-4">
+      <div class="room-images mb-4">
         <img
           src="/images/room2-4.jpg"
           alt="first room image 1"
           class="h-120 w-full object-cover"
         />
       </div>
-      <div class="grid grid-cols-3 gap-x-4 mb-4">
+      <div class="room-images grid grid-cols-3 gap-x-4 mb-4">
         <div>
           <img
             src="/images/room2-5.jpg"
@@ -194,16 +198,18 @@
   <!-- room 3 -->
 
   <div class="px-2 lg:px-10 py-10 pb-20 md:py-28">
-    <h2 class="text-lg md:text-2xl mb-4 font-semibold">BadRoom - 2</h2>
+    <h2 class="room-heading text-lg md:text-2xl mb-4 font-semibold">
+      BadRoom - 2
+    </h2>
     <div>
-      <div class="mb-4">
+      <div class="room-images mb-4">
         <img
           src="/images/room3-1.jpg"
           alt="first room image 1"
           class="h-120 w-full object-cover"
         />
       </div>
-      <div class="grid grid-cols-3 gap-x-4 mb-4">
+      <div class="room-images grid grid-cols-3 gap-x-4 mb-4">
         <div class="col-span-2">
           <img
             src="/images/room1-7.jpg"
@@ -219,14 +225,14 @@
           />
         </div>
       </div>
-      <div class="mb-4">
+      <div class="room-images mb-4">
         <img
           src="/images/room1-1.jpg"
           alt="first room image 1"
           class="h-120 w-full object-cover"
         />
       </div>
-      <div class="grid grid-cols-3 gap-x-4 mb-4">
+      <div class="room-images grid grid-cols-3 gap-x-4 mb-4">
         <div>
           <img
             src="/images/room1-2.jpg"
@@ -500,31 +506,35 @@
 
   // details informations about rooms animation scroll animation
 
-  const detailsScrollTimeline = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".details",
-      start: "top center",
-    },
+  gsap.utils.toArray(".room-heading").forEach((roomHeading: any) => {
+    const roomHeadingSplitText = SplitText.create(roomHeading, {
+      type: "chars",
+    });
+    gsap.from(roomHeadingSplitText.chars, {
+      y: 20,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.02,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: roomHeading,
+        start: "top 99%",
+        toggleActions: "play none none none",
+      },
+    });
   });
-
-  const detailsHeaderSplit = SplitText.create(".project-details-title", {
-    type: "lines",
-  });
-
-  detailsScrollTimeline.from(detailsHeaderSplit.chars, {
-    opacity: 0,
-    duration: 1,
-    yPercent: 80,
-    ease: "expo.out",
-    stagger: 0.02,
-  });
-
-  detailsScrollTimeline.from(".top-grid , .bottom-grid", {
-    opacity: 0,
-    duration: 1,
-    yPercent: 100,
-    ease: "expo.out",
-    stagger: 0.09,
+  gsap.utils.toArray(".room-images").forEach((roomImage: any) => {
+    gsap.from(roomImage, {
+      y: 20,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: roomImage,
+        start: "top 95%",
+        toggleActions: "play none none none",
+      },
+    });
   });
 
   //projects
@@ -553,7 +563,7 @@
       yPercent: -100,
       ease: "expo.out",
     },
-    "-=70%"
+    "-=50%"
   );
   const realtedProjectSplit = SplitText.create(".related-projects", {
     type: "lines",
@@ -568,6 +578,6 @@
       ease: "expo.out",
       stagger: 0.02,
     },
-    "-=70%"
+    "-=50%"
   );
 </script>
