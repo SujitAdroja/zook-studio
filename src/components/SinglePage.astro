@@ -11,7 +11,7 @@
 
 <section class="text-white overflow-hidden">
   <div
-    class={`hero-image-container relative h-screen  bg-[linear-gradient(to_top,rgba(0,0,0,1),transparent),url('/homepage/hero-image.jpg')] bg-cover bg-center`}
+    class={`hero-image-container relative h-screen  bg-[linear-gradient(to_top,rgba(0,0,0,1),transparent),url('/homepage/hero-image.jpg')] bg-cover bg-center mb-28 `}
   >
     <div class="absolute bottom-0 p-6 w-full flex items-center justify-center">
       <div>
@@ -43,7 +43,7 @@
     <div class="px-2 md:p-6 h-full flex flex-col justify-between col-span-3">
       <div>
         <h3
-          class="project-details-title text-5xl font-bold tracking-[-2px] mb-10 text-center md:text-start"
+          class="project-details-title text-5xl md:text-3xl lg:text-5xl font-bold tracking-[-2px] mb-10 text-center md:text-start"
         >
           Spaces designed to stimulate relaxation and promote well-being
         </h3>
@@ -54,7 +54,9 @@
           modi vitae. Tempora!
         </p>
       </div>
-      <div class="flex items-center gap-10">
+      <div
+        class="flex md:flex-col lg:flex-row items-center md:items-start lg:items-center gap-10 md:gap-2 lg:gap-10"
+      >
         <p class="project-details-timeline text-xs md:text-md shrink-0">
           LOCATION - <span class="text-white/50 font-[200]">Bruchet</span>
         </p>
@@ -67,7 +69,7 @@
       </div>
     </div>
     <div class="project-details-images p-4 px-6 pr-0 bg-white/10 col-span-5">
-      <h3 class="font-bold mb-4 text-lg md:text-2xl text-right pr-6">
+      <h3 class="font-bold mb-4 text-lg md:text-lg lg:text-2xl text-right pr-6">
         Project Hightlights
       </h3>
       <img
@@ -83,7 +85,7 @@
 
   <!-- images of the project room wise -->
   <!-- room1 -->
-  <div class="px-2 md:px-10 py-10 md:py-28">
+  <div class="px-2 lg:px-10 py-10 md:py-28">
     <h2 class="text-lg md:text-2xl mb-4 font-semibold">LivingRoom</h2>
     <div>
       <div class="mb-4">
@@ -137,7 +139,7 @@
 
   <!-- room 2 -->
 
-  <div class="px-2 md:px-10 py-10 md:py-28">
+  <div class="px-2 lg:px-10 py-10 md:py-28">
     <h2 class="text-lg md:text-2xl mb-4 font-semibold">BadRoom - 1</h2>
     <div>
       <div class="mb-4">
@@ -191,7 +193,7 @@
 
   <!-- room 3 -->
 
-  <div class="px-2 md:px-10 py-10 md:py-28">
+  <div class="px-2 lg:px-10 py-10 md:py-28">
     <h2 class="text-lg md:text-2xl mb-4 font-semibold">BadRoom - 2</h2>
     <div>
       <div class="mb-4">
@@ -247,7 +249,7 @@
     <!-- different projects related proejcts-->
 
     <div
-      class="related-projects-container p-8 bg-white/10 grid grid-cols-1 md:grid-cols-3 gap-4 relative"
+      class="related-projects-container p-8 lg:p-8 bg-white/10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 relative"
     >
       <span
         class="related-tag absolute inline-block bg-black -top-0 left-[50%] -translate-[50%] p-1 px-4 rounded-full uppercase text-md font-semibold"

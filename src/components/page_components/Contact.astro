@@ -6,9 +6,9 @@ import FAQ from "../FAQ.astro";
 ---
 
 <section class="about mb-10 md:mb-28">
-  <div class="hidden md:grid grid grid-cols-2">
+  <div class="hidden lg:grid grid grid-cols-2">
     <div class="p-10">
-      <h1 class="contact-heading text-white text-6xl font-light">
+      <h1 class="contact-heading text-white md:text-4xl lg:text-6xl font-light">
         Let's talk more <br /> about your next project.
       </h1>
       <div class="contact-info mt-50 flex flex-col items-start">
@@ -53,7 +53,7 @@ import FAQ from "../FAQ.astro";
 
   <!-- for mobile sections -->
   <div
-    class={`hero-image-container block md:hidden relative h-screen  bg-[linear-gradient(to_top,rgba(0,0,0,1),transparent),url('/homepage/hero-image.jpg')] bg-cover bg-center`}
+    class={`hero-image-container block lg:hidden relative h-screen  bg-[linear-gradient(to_top,rgba(0,0,0,1),transparent),url('/homepage/hero-image.jpg')] bg-cover bg-center`}
   >
     <div class="absolute bottom-10 p-6 w-full flex items-center justify-center">
       <div>
@@ -63,11 +63,11 @@ import FAQ from "../FAQ.astro";
           Zook Studio
         </p>
         <h1
-          class="hero-heading w-full text-white text-center text-4xl font-light md:text-start md:text-7xl md:font-light mb-2"
+          class="hero-heading w-full text-white text-center text-4xl font-light md:text-start lg:text-7xl md:font-light mb-2"
         >
           Let's talk more about your new project
         </h1>
-        <div class="contact-info flex flex-col items-center md:items-start">
+        <div class="contact-info flex flex-col items-center">
           <div
             class="flex items-center text-white bg-white/20 overflow-hidden rounded-md mb-2 hover:bg-white/10 transition-all duration-300 ease-in-out cursor-pointer"
           >
@@ -75,13 +75,25 @@ import FAQ from "../FAQ.astro";
               <MdOutlineLocalPhone size={20} />
             </div>
             <p class="text-sm px-4">+91 999988 83169</p>
-          </div><div
+          </div>
+          <div
             class="flex items-center text-white bg-white/20 overflow-hidden rounded-md mb-2 hover:bg-white/10 transition-all duration-300 ease-in-out cursor-pointer"
           >
             <div class="bg-white/20 p-1">
               <CiMail size={20} />
             </div>
             <p class="px-4 text-sm">info.zookstudio@gmail.com</p>
+          </div>
+          <div
+            class="hidden md:flex flex items-center text-white bg-white/20 overflow-hidden rounded-md mb-2 hover:bg-white/10 transition-all duration-300 ease-in-out cursor-pointer"
+          >
+            <div class="bg-white/20 p-1">
+              <CiLocationOn size={30} />
+            </div>
+            <p class="px-4 text-sm">
+              A 401 - 402, Hari villa, Near kairavi bungalows, Bodakdev,
+              Ahemdabad - 380054
+            </p>
           </div>
         </div>
       </div>
